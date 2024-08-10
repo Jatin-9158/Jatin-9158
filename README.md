@@ -1,4 +1,4 @@
-👋 Hi, I’m **Jatin-9158**!
+👋 Hi, I’m Jatin-9158!
 
 I'm a passionate programmer and learner currently studying Information Science & Engineering at the National Institute of Engineering, Mysuru.
 
@@ -14,9 +14,8 @@ I'm a passionate programmer and learner currently studying Information Science &
 
 ## Projects
 
-- **LeetCode Solutions:** I've solved over 100 problems on LeetCode, showcasing my proficiency in algorithms and data structures.
-- **Coding Ninjas Practice:** Actively participating in coding challenges and practice sessions on Coding Ninjas to enhance my coding skills.
-- **College Projects:** Collaborating on various projects related to software development, machine learning, and web development as part of my academic curriculum.
+- Coding Ninjas Practice: Actively participating in coding challenges and practice sessions on Coding Ninjas to enhance my coding skills.
+- College Projects: Collaborating on various projects related to software development, machine learning, and web development as part of my academic curriculum.
 
 ## Get in Touch
 
