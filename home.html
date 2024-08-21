@@ -21,7 +21,7 @@
         }
 
         .header {
-            position: fixed;
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
@@ -46,6 +46,9 @@
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s;
+            position: relative; /* Ensure relative positioning */
+            left: 0;  /* Default positioning */
+            top: 0;   /* Default positioning */
         }
 
         .header .logo:hover {
@@ -64,9 +67,7 @@
         }
 
         .navbar a:hover {
-        
             background-clip: border-box;
-            
         }
 
         .home {
@@ -97,7 +98,6 @@
         }
 
         .home-content h3 {
-            
             font-size: 28px;
             font-weight: 400;
             margin-bottom: 15px;
@@ -110,38 +110,32 @@
             letter-spacing: 0px;
             overflow: hidden;
             white-space: nowrap;
-      
             display: inline-block;
             padding: 0 10px;
         }
-        .home-content h2
-        {
-            
+
+        .home-content h2 {
             margin-top: 22px;
         }
-       
         
-        .navbar span
-        {
+        .navbar span {
             background:#00ccff;
         }
+
         .home-content p {
             font-size: 16px;
             margin-bottom: 20px;
             line-height: 1.6;
-            
         }
 
         .box {
             position: relative;
-           
             width: 200px;
             height: 200px;
-            left:32%;
+            left: 32%;
             border-radius: 50%;
             background: url("Img/4.jpg");
             background-size: 250px;
-            
         }
         
         .glow::before,
@@ -151,14 +145,13 @@
             width: 204px;
             height: 204px;
             left: -2px;
-            top:-2px;
-            bottom:-2px;
+            top: -2px;
+            bottom: -2px;
             background: linear-gradient(999999deg, #e6fb04, #ff6600, #00ff66, #00ccff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
             background-size: 400%;
             z-index: -1;
             border-radius: 50%;
             animation: animate 20s linear infinite;
-         
         }
 
         .glow::after {
@@ -176,6 +169,7 @@
                 background-position: 0 0;
             }
         }
+
         .animated-text {
             font-size: 34px;
             font-weight: 600;
@@ -214,7 +208,6 @@
                 width: 0;
             }
         }
-        
         
         .wrapper {
             display: flex;
@@ -282,6 +275,7 @@
             height: 12px;
             background: #fff;
         }
+
         .navbar .animation {
             position: absolute;
             height: 100%;
@@ -313,6 +307,7 @@
             left: calc(1175px + 120px + 90px + 105px);
             width: 110px; 
         }
+
         .Button-Download {
             background-color: white;
             border-radius: 50px;
@@ -323,320 +318,126 @@
             font-size: 18px;
             padding: 0.5rem 2rem; 
             line-height: 2.5rem; 
-            border: 2px solid black; 
-            box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid black;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-        
+
         .Button-Download:hover {
-            background-color:#0ef;
-            text-shadow: #1abc9c;
-            
-            color:black;
+            background-color: black;
+            color: white;
+            border-color: black;
         }
-        /* Styles for devices with a maximum width of 1200px (tablets and smaller desktops) */
-@media (max-width: 1200px) {
-    .header {
-        padding: 20px 5%;
-    }
 
-    .header .logo {
-        font-size: 24px;
-    }
-
-    .navbar a {
-        font-size: 16px;
-        margin-left: 20px;
-    }
-
-    .home-content {
-        padding: 20px;
-        max-width: 90%;
-    }
-
-    .home-content h1 {
-        font-size: 36px;
-    }
-
-    .home-content p {
-        font-size: 14px;
-    }
-
-    .box {
-        width: 150px;
-        height: 150px;
-    }
-
-    .wrapper .icon span {
-        height: 50px;
-        width: 50px;
-    }
-
-    .wrapper .icon span i {
-        font-size: 20px;
-    }
-
-    .Button-Download {
-        padding: 0.5rem 1.5rem; 
-    }
-
-    .navbar .animation {
-        left: 1185px;
-        width: 95px;
-    }
-}
-
-/* Styles for devices with a maximum width of 992px (small tablets and large phones) */
-@media (max-width: 992px) {
-    .header {
-        padding: 20px 5%;
-    }
-
-    .header .logo {
-        font-size: 24px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar a {
-        font-size: 16px;
-        margin-left: 15px;
-        margin-bottom: 10px;
-    }
-
-    .home-content {
-        padding: 15px;
-    }
-
-    .home-content h1 {
-        font-size: 30px;
-    }
-
-    .home-content p {
-        font-size: 12px;
-    }
-
-    .box {
-        width: 120px;
-        height: 120px;
-    }
-  
-    .wrapper .icon span {
-        height: 40px;
-        width: 40px;
-    }
-
-    .wrapper .icon span i {
-        font-size: 18px;
-    }
-
-    .Button-Download {
-        padding: 0.5rem 1rem; 
-    }
-
-    .navbar .animation {
-        left: calc(1185px + 100px);
-        width: 120px;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .header {
-        padding: 20px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar a {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .home-content {
-        padding: 15px;
-        max-width: 90%;
-    }
-
-    .home-content h1 {
-        font-size: 24px;
-    }
-
-    .home-content p {
-        font-size: 12px;
-    }
-
-    .box {
-        width: 100px;
-        height: 100px;
-    }
-
-    .wrapper .icon span {
-        height: 40px;
-        width: 40px;
-    }
-
-    .wrapper .icon span i {
-        font-size: 18px;
-    }
-
-    .Button-Download {
-        padding: 0.5rem 0.75rem; 
-        font-size: 14px;
-    }
-
-    .navbar .animation {
-        left: calc(1185px + 120px + 100px);
-        width: 90px;
-    }
-    .home-content h2 {
-        font-size: 20px;
-    }
-    .glow::before,
-    .glow::after {
-        content: "";
-        position: absolute;
-        width: 84px;
-        height: 84px;
-        top:-2px;
-        background: linear-gradient(999999deg, #e6fb04, #ff6600, #00ff66, #00ccff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
-        background-size: 400%;
-        z-index: -1;
-        border-radius: 50%;
-        animation: animate 20s linear infinite;
-     
-    }
-    .animated-text {
-        font-size: 20px;
-        font-weight: 600;
-        min-width: 280px;
-        position: relative;
-        overflow: hidden; 
-      
-    }
-}
-
-
-@media (max-width: 480px) {
-    .header {
-        padding: 15px 5%;
-    }
-
-    .header .logo {
-        font-size: 15px;
-    }
-
-    .navbar a {
-        font-size: 14px;
-        margin-left: 10px;
-    }
-
-
-    .navbar .animation {
-        width: 60px;
-    }
-    .home-content {
-        padding: 40px;
-        max-width: 90%;
-        height: 480px;
-    }
-
-    .home-content h1 {
-        font-size: 25px;
-    }
-    .home-content h2 {
-        font-size: 20px;
-    }
-    .home-content p {
-        font-size: 10px;
-    }
-
-    .box {
-        width: 100px;
-        height: 100px;
-        left:31%;
-        background-size: 70px;
-        
-    }
-        .glow::before,
-        .glow::after {
-            content: "";
+        .toogle-btn {
+            width: 35px;
+            height: 25px;
             position: absolute;
-            width: 104px;
-            height: 104px;
-            top:-2px;
+            left: 15px; /* Adjust this value to move the button slightly left */
+            top: 27px;   /* Adjust this value to move the button slightly up */
+            display: none; /* Hide by default; show on mobile screens */
+        }
+        
+        .toogle-btn span {
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            float: left;
+            margin-bottom: 5px;
+        }
+        
+
+        @media (max-width: 768px) {
+        .toogle-btn {
+                display: block;
             
-            left:0%;
-            background: linear-gradient(999999deg, #e6fb04, #ff6600, #00ff66, #00ccff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
-            background-size: 400%;
-            z-index: -1;
-            border-radius: 50%;
-            animation: animate 20s linear infinite;
-         
+            }
+            .header {
+                padding: 20px 5%;
+                
+            }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(
+                45deg,
+                rgba(36, 36, 36, 0.8) 0%,  /* Semi-transparent dark color */
+                rgba(0, 212, 255, 0.6) 100% /* Semi-transparent light color */
+            );
+            color: #fff;
+            padding: 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 99;
         }
 
-    .wrapper .icon span {
-        height: 30px;
-        width: 30px;
-    }
+        .sidebar.active {
+            transform: translateX(0);
+        }
 
-    .wrapper .icon span i {
-        font-size: 16px;
-    }
+        .sidebar .close-btn {
+            display: none;
+        }
 
-    .Button-Download {
-        padding: 0.5rem 0.75rem; 
-        font-size: 10px;
-        padding: 4px 8px;
-     
-    }
+        .sidebar .navbar a {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
 
-    .navbar .animation {
-        left: calc(1175px + 120px + 90px + 105px);
-        width: 110px;
-    }
-    .animated-text {
-        font-size: 20px;
-        font-weight: 600;
-        min-width: 280px;
-        position: relative;
-        overflow: hidden; 
-      
-    }
-}
-
-        
+        .sidebar .navbar a:hover {
+            background: #575757;
+        }
+        .toogle-btn span 
+        {
+            margin-left:10px;
+            position: relative;
+            
+        }
+        .header .logo {
+            left: 50px;  /* Adjust this value to move the logo slightly to the left */
+            top: -3px;   /* Adjust this value to move the logo slightly up */
+            font-size: 25px; /* Optional: Adjust the font size for smaller screens if needed */
+            
+        }
+       
+   }    
     </style>
 </head>
 <body>
     <header class="header">
+        <div class="toogle-btn" onclick="myFunction();">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar" id="nav">
- 
-            <a href="home.html">Home</a>
-            <a href="aboutme.html">About Me</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html">Contact</a>
-            <div class="animation start-home"></div>
-          
-        </nav>
+        <aside class="sidebar">
+            <div class="navbar" id="nav">
+                <a href="home.html">Home</a>
+                <a href="aboutme.html">About Me</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html">Contact</a>
+                <div class="animation start-home"></div>
+            </div>
+        </aside>   
     </header>
 
     <section class="home">
         <div class="home-content">
-            <div class="box glow">
-
-            </div>
+            <div class="box glow"></div>
             <h2>Hello, It's Me</h2> 
-            
             <h1>Jatin</h1>
             <div class="animated-text">I am <span></span></div>
-            
             <p>I am a web developer with a strong foundation in data structures and algorithms. My passion lies in creating efficient, user-friendly web applications that solve real-world problems.</p>
-            <a href="Resume.pdf" download class="Button-Download" >Download CV <i class="fa-solid fa-download"></i></a>
+            <a href="Resume.pdf" download class="Button-Download">Download CV <i class="fa-solid fa-download"></i></a>
             <div class="wrapper">
                 <div class="icon">
                     <div class="tooltip">Instagram</div>
@@ -657,6 +458,7 @@
             </div>
         </div>
     </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const texts = ["Web Developer", "Programmer","Tech Enthusiast"];
@@ -700,8 +502,20 @@
         
             type();
         });
-        </script>
-        
-    
+
+        function myFunction() {
+            var navbar = document.querySelector('.sidebar');
+            navbar.classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

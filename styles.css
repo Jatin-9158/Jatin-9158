@@ -1,0 +1,585 @@
+za
+.about-me .header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: background 0.3s, padding 0.3s;
+}
+
+.about-me .header.scrolled {
+    background: rgba(36, 36, 36, 0.8);
+    padding: 10px 10%;
+}
+
+.about-me .header .logo {
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.about-me .header .logo:hover {
+    transform: scale(1.1);
+}
+
+.about-me .navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    position: relative;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.navbar .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    background: #1abc9c;
+    transition: all 0.3s ease-out;
+    border-radius: 8px;
+    left: 1290px;
+    width: 110px;
+}
+
+.about-me .navbar a:nth-child(1):hover~.animation {
+    left: 1185px;
+    width: 95px;
+}
+
+.about-me .navbar a:nth-child(2):hover~.animation {
+    left: calc(1185px + 100px);
+    width: 120px;
+}
+
+.about-me .navbar a:nth-child(3):hover~.animation {
+    left: calc(1185px + 120px + 100px);
+    width: 90px;
+}
+
+.about-me .navbar a:nth-child(4):hover~.animation {
+    left: calc(1175px + 120px + 90px + 105px);
+    width: 110px;
+}
+
+.about-me :root {
+    --color-bg1: rgb(108, 0, 162);
+    --color-bg2: rgb(0, 17, 82);
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+
+.about-me .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.about-me .gradients-container {
+   
+    width: 100%;
+    height: 100%;
+}
+
+.about-me .g1,
+.about-me .g2,
+.about-me .g3,
+.about-me .g4,
+.about-me .g5,
+.about-me .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    opacity: 0.7;
+}
+
+.about-me .g1 {
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    animation: moveVertical 30s ease infinite;
+}
+
+.about-me .g2 {
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+}
+
+.about-me .g3 {
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+}
+
+.about-me .g4 {
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+}
+
+.about-me .g5 {
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+}
+
+.about-me .text-slider-container {
+    position: relative;
+    width: 50%;
+    height: 500px; 
+    top:250px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    border-radius: 15px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Glassy blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+.about-me .text-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.about-me .text-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.about-me .text-slide img {
+    border-radius: 10%;
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.about-me .text-slide h1{
+    color: rgb(179, 255, 0);
+    padding-top:40px;
+    font-size: 30px;
+}
+.about-me .text-slide p {
+    margin: 20px;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+    text-align: center;
+    padding: 12px 20px; 
+    color: antiquewhite;
+    letter-spacing: 0.5px;
+    line-height: 33px;
+
+    border-radius: 10px;
+}
+
+.about-me .nav-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.about-me .nav-button.prev {
+    left: 10px;
+}
+
+.about-me .nav-button.next {
+    right: 10px;
+}
+.about-me .border-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f5be07d2;
+    text-align: center;
+    margin: 90px 0;
+    font-size: 100px;
+
+  
+}
+.about-me .toogle-btn {
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    left: 15px; /* Adjust this value to move the button slightly left */
+    top: 27px;   /* Adjust this value to move the button slightly up */
+    display: none; /* Hide by default; show on mobile screens */
+}
+
+.about-me .toogle-btn span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    float: left;
+    margin-bottom: 5px;
+}    
+/* Base Styles - Mobile First Approach */
+
+/* For small screens (phones, 480px and below) */
+@media (max-width: 480px) {
+.header {
+padding: 10px 5%;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.header .logo {
+font-size: 24px;
+}
+
+.navbar {
+flex-direction: column;
+align-items: flex-start;
+margin-top: 10px;
+}
+
+.navbar a {
+margin: 10px 0;
+font-size: 16px;
+}
+
+.text-slider-container {
+width: 90%;
+height: 400px; /* Adjust height for smaller screens */
+top: 150px;
+}
+
+.text-slide img {
+width: 80px; /* Smaller images for smaller screens */
+}
+
+.text-slide h1 {
+font-size: 24px;
+}
+
+.text-slide p {
+font-size: 18px;
+padding: 8px 15px;
+}
+
+.border-heading {
+font-size: 60px; /* Adjust font size for smaller screens */
+}
+}
+
+/* For medium screens (tablets, 768px and below) */
+@media (max-width: 768px) {
+.header {
+padding: 15px 7%;
+}
+
+.header .logo {
+font-size: 26px;
+}
+
+.navbar a {
+font-size: 17px;
+margin-left: 25px;
+}
+
+.text-slider-container {
+width: 80%;
+height: 450px; /* Adjust height for medium screens */
+top: 200px;
+}
+
+.text-slide img {
+width: 90px; /* Slightly larger images for medium screens */
+}
+
+.text-slide h1 {
+font-size: 28px;
+}
+
+.text-slide p {
+font-size: 20px;
+padding: 10px 18px;
+}
+
+.border-heading {
+font-size: 80px; /* Adjust font size for medium screens */
+}
+}
+
+/* For large screens (desktops, above 768px) */
+@media (min-width: 769px) {
+.header {
+padding: 15px 10%;
+}
+
+.header .logo {
+font-size: 20px;
+}
+
+.navbar a {
+font-size: 18px;
+margin-left: 35px;
+}
+
+.text-slider-container {
+width: 50%;
+height: 500px; 
+top: 250px;
+}
+
+.text-slide img {
+width: 100px; /* Standard image size for large screens */
+}
+
+.text-slide h1 {
+font-size: 30px;
+}
+
+.text-slide p {
+font-size: 23px;
+padding: 12px 20px;
+}
+
+.border-heading {
+font-size: 100px; /* Standard font size for large screens */
+}
+}   
+/* Responsive adjustments for the text slider */
+
+/* For small screens (phones, 480px and below) */
+/* Responsive adjustments for the text slider */
+
+/* For small screens (phones, 480px and below) */ 
+/* For small screens (phones, 480px and below) */
+.about-me @media (max-width: 480px) {
+.header {
+padding: 10px 5%;
+}
+
+.header .logo {
+font-size: 18px;
+}
+
+.navbar a {
+font-size: 12px;
+margin-left: 10px; /* Adjusted margin for very small screens */
+}
+
+.navbar .animation {
+width: 50px;
+}
+.text-slider-container {
+width: 90%;
+height: 50vh; /* Set height to 50% of the viewport height */
+top: 50%; /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(-50%, -50%); /* Adjust positioning */
+position: absolute;
+margin: 0; /* Remove any margin */
+display: flex;
+align-items: center;
+justify-content: center;
+overflow-y: auto; /* Enable scrolling */
+max-height: 80vh; /* Restrict height to viewport height */
+margin-top: 20px;
+}
+
+.text-slider {
+display: flex;
+}
+
+.text-slide {
+min-width: 100%;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: #fff;
+padding: 0 10px; /* Add some padding */
+}
+
+.text-slide img {
+width: 60px; /* Smaller images for smaller screens */
+height: auto;
+margin-bottom: 15px; /* Space between image and text */
+}
+
+.text-slide h1 {
+font-size: 20px; /* Adjust size for smaller screens */
+
+}
+
+.text-slide p {
+font-size: 16px; /* Adjust size for smaller screens */
+padding: 8px 12px;
+margin: 10px 0; /* Adjust margin */
+}
+
+.nav-button {
+font-size: 1.2rem; /* Adjust size for smaller screens */
+padding: 6px;
+width: 35px; /* Adjust width */
+height: 35px; /* Adjust height */
+}
+
+.nav-button.prev {
+left: 5%; /* Position adjustments */
+}
+
+.nav-button.next {
+right: 5%; /* Position adjustments */
+}
+
+.border-heading {
+font-size: 40px; /* Adjust font size for smaller screens */
+margin-top:150px;
+}
+.sidebar {
+position: fixed;
+top: 0;
+left: 0;
+width: 250px;
+height: 100vh;
+background: linear-gradient(
+    45deg,
+    rgba(36, 36, 36, 0.8) 0%,  /* Semi-transparent dark color */
+    rgba(0, 212, 255, 0.6) 100% /* Semi-transparent light color */
+);
+color: #fff;
+padding: 20px;
+transform: translateX(-100%);
+transition: transform 0.3s ease;
+z-index: 99;
+}
+
+.sidebar.active {
+transform: translateX(0);
+}
+
+.sidebar .close-btn {
+display: none;
+}
+
+.sidebar .navbar a {
+display: block;
+padding: 10px;
+margin-bottom: 10px;
+color: #fff;
+text-decoration: none;
+font-size: 18px;
+transition: background 0.3s;
+}
+
+.sidebar .navbar a:hover {
+background: #575757;
+}
+.toogle-btn span 
+{
+margin-left:10px;
+position: relative;
+
+}
+.header .logo {
+left: 50px;  /* Adjust this value to move the logo slightly to the left */
+top: -3px;   /* Adjust this value to move the logo slightly up */
+font-size: 25px; /* Optional: Adjust the font size for smaller screens if needed */
+}   
+
+}
+}
+
