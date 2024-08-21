@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <script src="https://kit.fontawesome.com/4777ff6484.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .header.scrolled {
+            background: rgba(36, 36, 36, 0.8);
+            padding: 10px 10%;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .header .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            position: relative;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .navbar .animation  {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 1;
+            background: #1abc9c;
+            transition: all 0.3s ease-out;
+            border-radius: 8px;
+            left: 1501px;
+            width: 95px;
+        }
+
+        .navbar a:nth-child(1):hover~.animation {
+            left: 1185px;
+            width: 95px;
+        }
+
+        .navbar a:nth-child(2):hover~.animation {
+            left: calc(1185px + 100px);
+            width: 120px;
+        }
+
+        .navbar a:nth-child(3):hover~.animation {
+            left: calc(1185px + 120px + 100px);
+            width: 90px;
+        }
+
+        .navbar a:nth-child(4):hover~.animation {
+            left: calc(1175px + 120px + 90px + 105px);
+            width: 110px;
+        }
+
+        .scene {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            background-attachment: fixed;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px; 
+            min-height: 150vh;
+        }
+
+        .earth {
+            width: 64.444vh;
+            height: 64.444vh;
+            border-radius: 50%;
+            background: url("Img/6.jpeg");
+            box-shadow: inset 1.9vh -2vh 5vh 1vh #080606, 0px 0px 3vh 0.6vh #000;
+            animation:  rotate 5s linear infinite, glowing 5s linear infinite;
+            margin-right:200px;
+            z-index: 2;
+        }
+
+        @keyframes rotate {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 53vh 0;
+            }
+        }
+        .container form {
+            width: 600px;
+            height:650px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            z-index:2;
+            align-items: center;
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            animation: glowing 3s infinite ease-in; 
+         
+        }
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 15px rgba(6, 62, 245, 0.5), 0 0 30px hsla(249, 100%, 66%, 0.4);
+            }
+            50% 
+            {
+                box-shadow: 0 0 15px white;
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(97, 102, 241, 0.5), 0 0 30px rgba(11, 25, 214, 0.4);
+            }
+        }
+
+        
+        .container form h1 {
+            color: #fff;
+            font-weight: 600;
+            line-height: 2;
+            margin-bottom: 10px;
+            padding-top:15px;
+            padding-bottom:15px;
+            text-align: center;
+        }
+        
+        .input-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .container form input,
+        .container form textarea {
+            width: 43%; 
+            padding: 15px;
+            height: 60%;
+            border: none;
+            border-bottom: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .container form input::placeholder,
+        .container form textarea::placeholder {
+            color: #fff;
+        }
+        
+        .container form textarea {
+            width: 100%;
+            height:125px;
+            min-height: 80px;
+            max-height: 180px;
+        }
+        
+        .container form h4 {
+            font-size: 20px;
+            color: #fff;
+            padding: 20px;
+            position: relative;
+            left: -175px; 
+        }
+        
+        .container form #button {
+            border: none;
+            background: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 24px;
+            color: #000;
+            width: 200px;
+            height: 60px;
+            transition: 0.3s;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .container form #button:hover {
+            background: #000;
+            color: #fff;
+        }
+        .scene i 
+        {
+           position: absolute;
+           background: #fff;
+           border-radius: 50%; 
+           width:50px;
+           height: 50px;
+           animation: animate linear infinite;  
+           z-index: 1;
+        }
+
+        @keyframes animate {
+            0%
+            {
+                opacity: 0;
+                transform:translateY(0);
+            }
+            10%,90%
+            {
+                opacity: 1;
+            }
+            100% 
+            {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+        #successMessage
+        {
+            display:none; 
+            color:green; 
+            margin-top:10px; 
+            font-size:20px;
+            font-weight: 1000px;
+        }     
+        @media (max-width: 1200px) {
+            .header {
+                padding: 15px 7%;
+            }
+        
+            .header .logo {
+                font-size: 24px;
+            }
+        
+            .navbar a {
+                font-size: 16px;
+                margin-left: 30px;
+            }
+        
+            .navbar .animation {
+                width: 85px;
+            }
+        
+            .earth {
+                width: 50vh;
+                height: 50vh;
+                margin-right: 150px;
+            }
+        
+            .container {
+                gap: 30px;
+            }
+        
+            .container form {
+                width: 500px;
+                height: 600px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header {
+                padding: 15px 5%;
+            }
+        
+            .header .logo {
+                font-size: 20px;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin-left: 20px;
+            }
+        
+            .navbar .animation {
+                width: 70px;
+            }
+        
+            .earth {
+                width: 40vh;
+                height: 40vh;
+                margin-right: 100px;
+            }
+        
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        
+            .container form {
+                width: 80%;
+                max-width: 450px;
+                height: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+            }
+        
+            .header .logo {
+                font-size: 20px;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        
+        
+            .navbar .animation {
+                width: 60px;
+            }
+         
+            .earth {
+                width: 35vh;
+                height: 35vh;
+                margin-right: 60px;
+            }
+        
+            .container {
+                padding: 10px;
+            }
+        
+            .container form {
+                width: 90%;
+                max-width: 400px;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header {
+                padding: 15px 5%;
+            }
+        
+            .header .logo {
+                font-size: 20px;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        
+        
+            .navbar .animation {
+                width: 50px;
+            }
+        
+            .earth {
+                width: 32vh;
+                height: 32vh;
+                margin-right: 10px;
+                margin-top: 100px;
+            }
+        
+            .container {
+                flex-direction: column;
+                padding: 5px;
+                align-items: center;
+            }
+            .container form h4 {
+                font-size: 20px;
+                color: #fff;
+                padding: 20px;
+                position: relative;
+                left: -65px; 
+            }
+            
+        
+            .container form {
+                width: 100%; /* Adjusted width to use more available space */
+                max-width: 400px; /* Smaller max-width for a more compact container */
+                padding: 8px; /* Reduced padding for a more compact design */
+                border-radius: 8px; /* Slightly smaller border-radius */
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px); /* Slightly less blur for a subtle effect */
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow for a subtle effect */
+                max-height: 50vh; /* Adjusted height for a smaller container */
+                margin-top: 15px; /* Slightly reduced margin-top for better alignment */
+                overflow-y: auto; /* Enable scrolling if content exceeds the height */
+            }
+            
+        
+            .container form input,
+            .container form textarea{
+                font-size: 14px;
+            }
+            .container form #button {
+                font-size: 14px;
+                width:100px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar" id="nav">
+            <a href="home.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+            <div class="animation start-home"></div>
+        </nav>
+    </header>
+    <div class="scene">
+        <div class="container">
+            <div class="earth">
+            </div>
+            <form id="contactForm">
+                <input type="hidden" name="access_key" value="77075d80-2117-40ba-b53c-85c9fef22789">
+                <h1>Contact Me</h1>
+            
+                <div class="input-row">
+                    <input type="text" id="firstName" name="first_name" placeholder="First Name" class="item" autocomplete="off" required>
+                    <input type="text" id="lastName" name="last_name" placeholder="Last Name" class="item" autocomplete="off" required>
+                </div>
+            
+                <div class="input-row">
+                    <input type="email" id="email" name="email" placeholder="Email" class="item" autocomplete="off" required>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile" class="item" autocomplete="off" required>
+                </div>
+            
+                <input type="text" id="subject" name="subject" placeholder="Subject" class="item" style="width:100%; height:6%" autocomplete="off" required>
+            
+                <h4>Type your Message</h4>
+                <textarea id="message" name="message" placeholder="What you want to say" required></textarea>
+            
+                <button type="submit" id="button">Send</button>
+            
+
+                <div id="successMessage">
+                    &#10004; Your message has been sent!
+                </div>
+            </form>
+            
+            
+        </div>
+        <script type="text/javascript">
+            function stars()
+            {
+               let count=1000;
+               let scene=document.querySelector('.scene');
+               let i=0;
+               while(i < count)
+               {
+                 let star = document.createElement("i");
+                 let x = Math.floor(Math.random() * window.innerWidth);
+                 let y = Math.floor(Math.random() * window.innerHeight);
+                 let duration = Math.random() * 10;
+                 let size = Math.random() *2;
+
+                 star.style.left = x + 'px'
+                 star.style.top = y + 'px';
+                 star.style.width = 1 + size + 'px';
+                 star.style.height = 1 + size + 'px';
+                 star.style.animationDuration = duration + 's';
+                 star.style.animationDelay = duration + 's';
+                 scene.appendChild(star);
+                 i++ 
+
+               }
+            }  
+           
+            
+            
+            
+            stars(); 
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById("contactForm");
+                const successMessage = document.getElementById("successMessage");
+                const errorMessage = document.getElementById("errorMessage");
+            
+                if (form) {
+                    form.addEventListener("submit", async (event) => {
+                        event.preventDefault();
+            
+                        successMessage.style.display = "none";
+                        if (errorMessage) errorMessage.style.display = "none";
+            
+                        const formData = new FormData(form);
+                        const data = {
+                            access_key: formData.get('access_key').trim(),
+                            first_name: formData.get('first_name').trim(),
+                            last_name: formData.get('last_name').trim(),
+                            email: formData.get('email').trim(),
+                            mobile: formData.get('mobile').trim(),
+                            subject: formData.get('subject').trim(),
+                            message: formData.get('message').trim()
+                        };
+               
+                        for (const [key, value] of Object.entries(data)) {
+                            if (!value) {
+                                if (errorMessage) {
+                                    errorMessage.textContent = `${key.replace('_', ' ')} can't be blank`;
+                                    errorMessage.style.display = "block";
+                                }
+                                return;
+                            }
+                        }
+            
+                        // Log the data object
+                        console.log("Form Data:", data);
+            
+                        try {
+                            const response = await fetch('https://api.web3forms.com/submit', {
+                                method: "POST",
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(data)
+                            });
+            
+                            if (!response.ok) {
+                                throw new Error("Network response was not ok.");
+                            }
+            
+                            const result = await response.json();
+                            console.log("API Response:", result); 
+            
+                            if (result.success) {
+                                successMessage.style.display = "block";
+                            } else {
+                                if (errorMessage) {
+                                    errorMessage.textContent = result.message || "An error occurred.";
+                                    errorMessage.style.display = "block";
+                                }
+                            }
+            
+                            form.reset();
+                            setTimeout(() => {
+                                successMessage.style.display = "none";
+                            }, 5000);
+                        } catch (error) {
+                            if (errorMessage) {
+                                errorMessage.textContent = "An error occurred. Please try again.";
+                                errorMessage.style.display = "block";
+                            }
+                        }
+                    });
+                }
+            });
+                      
+            function generateRotatingText(words) {
+                const circleContainer = document.querySelector('.circle');
+                const totalWords = words.length;
+                
+                words.forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.style.setProperty('--i', index + 1); // Dynamic index for rotation
+                    span.textContent = word; // Set the text of the span
+                    circleContainer.appendChild(span); // Append span to the circle container
+                });
+            }
+    
+            // Array of words to rotate
+            const rotatingWords = ['Contact', 'With', 'Me', 'Feel', 'Free', 'To', 'Connect'];
+    
+            // Call the function
+            generateRotatingText(rotatingWords);
+            
+            
+            
+          
+            </script>
+                    
+                    
+            </body>
+            </html>
+            

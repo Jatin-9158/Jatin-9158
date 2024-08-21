@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <script src="https://kit.fontawesome.com/4777ff6484.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .header.scrolled {
+            background: rgba(36, 36, 36, 0.8);
+            padding: 10px 10%;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .header .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            position: relative;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .navbar .animation {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 1;
+            background: #1abc9c;
+            transition: all 0.3s ease-out;
+            border-radius: 8px;
+            left: 1386px;
+            width: 90px;
+        }
+
+        .navbar a:nth-child(1):hover~.animation {
+            left: 1170px;
+            width: 95px;
+        }
+
+        .navbar a:nth-child(2):hover~.animation {
+            left: calc(1185px + 80px);
+            width: 120px;
+        }
+
+        .navbar a:nth-child(3):hover~.animation {
+            left: calc(1185px + 120px + 80px);
+            width: 90px;
+        }
+
+        .navbar a:nth-child(4):hover~.animation {
+            left: calc(1159px + 120px + 90px + 105px);
+            width: 110px;
+        }
+
+        .skill h1 {
+            text-align: center;
+            color: #FF3366;
+        }
+
+        .skill h3 {
+            margin: 5px;
+            color: black;
+        }
+        body {
+            background:rgb(19, 19, 19);
+            background-size: cover; /* Ensure background covers entire viewport */
+            background-attachment: fixed;
+        
+            filter: blur(45%);
+            display: flex;
+           
+        }
+        .skill {
+            width: 600px;
+            height: 700px;
+            margin-top:150px;
+            margin-left:130px;
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            border-radius: 15px; /* Rounded corners */
+            backdrop-filter: blur(15px); /* Glassy blur effect */
+            -webkit-backdrop-filter: blur(15px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            padding: 20px; /* Added padding for better spacing */
+            position: relative; /* For the animation effect */
+            animation: glowing 5s infinite ease-in; /* Animation for glowing effect */
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 15px rgba(147, 166, 147, 0.5), 0 0 30px hsla(249, 100%, 52%, 0.4);
+            }
+            25% {
+                box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.4);
+            }
+            75% {
+                box-shadow: 0 0 15px rgba(255, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 15px #6699FF;
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.4);
+            }
+        }
+
+        .skill li {
+            margin: 20px 0;
+            padding: 10px;
+        }
+        h3 .icon {
+            width: 30px; /* Adjust icon size as needed */
+            height: 30px; /* Adjust icon size as needed */
+          
+            border-radius: 50%; /* Ensure the icon has rounded corners if needed */
+            box-shadow: 0 0 10px rgba(30, 224, 224, 0.8); /* Glow effect with color and intensity */
+            transition: box-shadow 0.3s ease-in-out; /* Smooth transition for glowing effect */
+        }
+        
+        h3 .icon:hover {
+            box-shadow: 0 0 20px rgba(30, 224, 224, 1); /* Stronger glow on hover */
+        }
+        
+        .bar {
+            background: #353b48;
+            display: block;
+            height: 20px; /* Corrected from '20x' to '20px' */
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .bar:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .bar span {
+            height: 20px;
+            float: left;
+            background: linear-gradient(135deg, rgba(236, 0, 140, 1) 0%, rgba(252, 103, 103, 1) 100%);
+        }
+
+        .html {
+            width: 90%;
+            animation: html 3s;
+        }
+
+        .CSS {
+            width: 60%;
+            animation: CSS 3s;
+        }
+
+        .C {
+            width: 85%;
+            animation: C 3s;
+        }
+
+        .Cpp {
+            width: 85%;
+            animation: Cpp 3s;
+        }
+
+        .Java {
+            width: 75%;
+            animation: Java 3s;
+        }
+
+        @keyframes html {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 90%;
+            }
+        }
+
+        @keyframes CSS {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 60%;
+            }
+        }
+
+        @keyframes C {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 85%;
+            }
+        }
+
+        @keyframes Cpp {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 85%;
+            }
+        }
+
+        @keyframes Java {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 75%;
+            }
+        }
+        .skill2 {
+            width: 750px;
+            height: 600px;
+            margin: 150px auto;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to create multiple rows */
+            justify-content: space-around; /* Evenly space circles horizontally */
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            animation: glowing 5s infinite ease-in; 
+
+        }
+        .skill2 h1 {
+            text-align: center;
+            color: #00CC33;
+            width: 100%; /* Make heading take full width */
+        }
+        
+        .skill2 .circle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 15px; /* Add margin for spacing between circles */
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .skill2 .circle::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border-radius: 50%;
+            background: #222;
+            opacity: 0.8;
+        }
+        
+        .skill2 .circle::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: #333;
+            border: 15px solid #4d4c51;
+            border-radius: 50%;
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.75), 0 -2px 2px rgba(255,255,255,0.5), inset 0 4px 2px rgba(0,0,0,0.25), inset 0 -2px 2px rgba(255,255,255,0.5);
+        }
+        
+        .skill2 .circle .number {
+            position: relative;
+            color: #fff;
+            z-index: 10;
+            line-height: 1em;
+            font-size: 2em;
+        }
+        .skill2 .circle .number span{
+            position: relative;
+            color: #fff;
+            z-index: 10;
+            line-height: 1em;
+            font-size: 0.5em;
+        }
+        
+        
+        .skill2 .circle h4 {
+            position: relative;
+            color: #fff;
+            z-index: 10;
+            font-weight: 500;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            margin: 10px;
+            line-height: 0.6em;
+        }
+       
+        
+        /* Medium Screens (Tablets) */
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            body {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        
+            .skill, .skill2 {
+                width: 80%;
+                padding: 50px;
+                margin: 30px 10px;
+            }
+        
+            .skill-circle {
+                width: 110px;
+                height: 110px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Small Screens (Phones) */
+        @media only screen and (max-width: 767px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header {
+                padding: 15px 5%;
+            }
+        
+            .header .logo {
+                font-size: 20px;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        
+        
+        
+            .skill {
+                width: 80%; /* Stacked layout for smaller devices */
+                padding: 50px;
+                margin:20px;
+                margin-top: 85px;
+                
+            }
+        
+            .skill-circle {
+                width: 10px; /* Smaller circles for mobile */
+                height: 10px;
+                font-size: 12px; /* Smaller text for small screens */
+            }
+            .skill2 {
+                width: 80%; /* Stacked layout for smaller devices */
+                padding: 40px;
+                height: 1550px;
+                margin: 20px 0;
+            }
+        }
+        @media only screen and (max-width:480px) {
+            .header {
+                padding: 15px 5%;
+            }
+        
+            .header .logo {
+                font-size: 20px;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        
+            .navbar .animation {
+                width: 60px;
+            }
+         
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar" id="nav">
+            <a href="home.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+            <div class="animation start-home"></div>
+        </nav>
+    </header>
+
+    <div class="skill">
+        <h1>Technical Skills</h1>
+        <ul style="list-style-type: none;">
+        <li>
+            <h3><img src="Icons/html.png" alt="html icon" class="icon">HTML</h3>
+            <span class="bar"><span class="html"></span></span>
+        </li>
+        <li>
+            <h3><img src="Icons/css.png" alt="CSS icon" class="icon">CSS</h3>
+            <span class="bar"><span class="CSS">
+            </span></span>
+        </li>
+        <li>
+            <h3><img src="Icons/c.png" alt="C icon" class="icon"></i>C</h3>
+            <span class="bar"><span class="C"></span></span>
+        </li>
+        <li>
+            <h3><img src="Icons/cpp.png" alt="C++ icon" class="icon">C++</h3>
+            <span class="bar"><span class="Cpp"></span></span>
+        </li>
+        <li>
+            <h3><img src="Icons/java.png" alt="C" class="icon">Java</h3>
+            <span class="bar"><span class="Java"></span></span>
+        </li>
+    </ul>
+    </div>
+    <div class="skill2">
+        <h1>Professional Skills</h1>
+        <div class="circle" data-degree="95" data-color="#CC0000">
+            <h2 class="number">95<span>%</span></h2>
+            <h4>Communication</h4>
+        </div>
+        <div class="circle" data-degree="85" data-color="#009999">
+            <h2 class="number">84<span>%</span></h2>
+            <h4>Team Work</h4>
+        </div>
+        <div class="circle" data-degree="89" data-color="#6699FF">
+            <h2 class="number">89<span>%</span></h2>
+            <h4 style="font-size:11px ">Project Management</h4>
+        </div>
+        <div class="circle" data-degree="60" data-color="#CCCC00">
+            <h2 class="number">60<span>%</span></h2>
+            <h4>Creativity</h4>
+        </div>
+        <div class="circle" data-degree="80" data-color="#FF66FF">
+            <h2 class="number">80<span>%</span></h2>
+            <h4>Problem Solving</h4>
+        </div>
+        <div class="circle" data-degree="75" data-color="#33FF99">
+            <h2 class="number">75<span>%</span></h2>
+            <h4>Work Ethic</h4>
+        </div>
+        
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            let circles = document.querySelectorAll('.circle');
+            
+            circles.forEach(function(progress) {
+                let degree = 0;
+                let targetDegree = parseInt(progress.getAttribute('data-degree'));
+                let color = progress.getAttribute('data-color');
+                let number = progress.querySelector('.number');
+        
+                let interval = setInterval(function() {
+                    degree += 1;
+                    if (degree > targetDegree) {
+                        clearInterval(interval);
+                        return;
+                    }
+        
+                    progress.style.background = `conic-gradient(${color} ${degree}%, #222 0%)`;
+                    number.innerHTML = degree + '<span style="color: ' + color + ';"> %</span>'; // Update inner HTML with color;
+                    number.style.color = color;
+                }, 50); 
+            });
+        });
+        
+        
+    </script>
+    
+</body>
+</html>
