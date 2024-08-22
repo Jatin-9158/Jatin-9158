@@ -334,7 +334,7 @@
         
             .container {
                 padding: 8px;
-                height: 200px;
+                height: 250px;
                 overflow-y: auto;
             }
         
@@ -355,7 +355,7 @@
                 position: fixed;
                 top: 0;
                 left: -100%; 
-                width: 250px;
+                width: 150px;
                 height: 100vh;
                 background-color: rgba(36, 36, 36, 0.9);
                 display: flex;
@@ -440,14 +440,96 @@
                 padding: 5px;
                 height: 28px;
                 font-size: 12px;
-            }
-           
-            
-    
-            
+            }       
+         }
+         @media (max-width: 600px) {
 
-              
-         }       
+            .header {
+                padding: 10px 5%;
+            }
+        
+            .header .logo {
+                font-size: 22px;
+                left: 30px;
+            }
+        
+            .earth {
+                width: 30vh;
+                height: 30vh;
+                margin-left: 20%;
+                margin-top: 20%;
+            }
+        
+            .container {
+                width: 90%; /* Make the container smaller */
+                padding: 5px; /* Add padding for spacing */
+                height: auto; /* Adjust height for smaller screens */
+                margin: 0 auto; /* Center the container */
+                overflow-y: visible; /* Remove scroll on smaller screens */
+            }
+        
+            .container form {
+                width: 100%; /* Full width for the form */
+                margin-top: 5px;
+            }
+        
+            .container form h1 {
+                font-size: 24px; /* Smaller heading size */
+            }
+        
+            .container form input,
+            .container form textarea {
+                width: 100%; /* Full width inputs and text areas */
+                padding: 10px;
+                font-size: 14px; /* Slightly smaller font size */
+            }
+        
+            .container form textarea {
+                height: 50px; /* Adjust height for the textarea */
+            }
+        
+            .toogle-btn {
+                display: block;
+                position: absolute;
+                left: 10px;
+                top: 20px;
+                z-index: 300;
+            }
+        
+            .sidebar {
+                width: 150px; 
+                height: 100vh;
+                left: -100%; 
+                transition: 0.3s;
+            }
+        
+            .sidebar.active {
+                left: 0; 
+            }
+        
+            .sidebar .navbar a {
+                font-size: 20px;
+                padding: 15px 0;
+            }
+        
+            .sidebar .navbar h2 {
+                font-size: 24px;
+            }
+        
+            .sidebar-photo {
+                width: 120px;
+                height: 120px;
+            }
+        
+            .toogle-btn img {
+                height: 20px;
+                width: 20px;
+                padding: 3px;
+            }
+        }
+          
+
+            
     </style>
 </head>
 <body>
