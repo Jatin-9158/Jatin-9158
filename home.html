@@ -416,7 +416,7 @@
             .toogle-btn img 
             {
                 display: block;
-                position: absolute;
+                position: relative;
                 top:-4px;
                 height: 25px;
                 width:25px;
@@ -426,8 +426,10 @@
                 
         
             }
-            .header {
-                padding: 20px 5%;       
+            .glow::before,
+            .glow::after {
+                width: 154px;
+                height: 154px;  
             }
            .box
            {
@@ -443,6 +445,91 @@
              position: relative;
              top:-5px;
            }
+           @media (max-width: 600px) {
+       
+            .html,.body{
+                overflow-y: auto;
+            }
+            .header .logo {
+                left: 5%;
+                font-size: 20px;
+                top: 0;
+            }
+        
+            .header.scrolled {
+                padding: 5px 5%; 
+            }
+        
+            /* Adjusting the sidebar for smaller screens */
+            .sidebar {
+                width: 200px; 
+            }
+        
+            .sidebar .navbar a {
+                font-size: 20px; /* Make navbar links smaller */
+                padding: 15px 0; /* Reduce padding between links */
+            }
+        
+            .sidebar .navbar h2 {
+                font-size: 24px; /* Adjust the "My Portfolio" text size */
+            }
+        
+            .sidebar-photo {
+                width: 100px; /* Smaller profile photo */
+                height: 100px; 
+            }
+        
+            .home {
+                padding: 30px 5%; /* Reduce padding for mobile */
+                padding-top:160px;
+            }
+        
+            .home-content {
+                max-width: 300px; /* Limit content width for smaller screens */
+                padding: 20px; /* Reduce padding */
+                height:auto;
+            }
+        
+            .home-content h1 {
+                font-size: 34px; /* Smaller heading size */
+            }
+        
+            .home-content h3, .home-content p {
+                font-size: 14px; /* Adjust text size for smaller screens */
+            }
+        
+            .box {
+                width: 150px; /* Smaller box size */
+                height: 150px;
+                left: 20%; /* Adjust position */
+            }
+            
+        
+            /* Adjusting the animated text */
+            .animated-text {
+                font-size: 24px; /* Smaller animated text */
+            }
+        
+            .wrapper .icon {
+                margin: 0 10px; /* Reduce space between icons */
+            }
+        
+            .wrapper .icon span {
+                height: 50px; /* Smaller icon container */
+                width: 50px;
+            }
+        
+            .wrapper .icon span i {
+                font-size: 20px; /* Smaller icon size */
+            }
+        
+            /* Download Button size adjustment */
+            .Button-Download {
+                font-size: 16px;
+                padding: 0.4rem 1.5rem; /* Smaller padding for mobile */
+            }
+        }
+        
 
 }
     </style>
