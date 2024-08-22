@@ -55,14 +55,14 @@
         }
 
         .navbar a {
-            font-size: 18px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 35px;
             position: relative;
             transition: color 0.3s;
-            z-index: 10;
+            z-index:10;
         }
 
         .navbar .animation {
@@ -73,28 +73,28 @@
             background: #1abc9c;
             transition: all 0.3s ease-out;
             border-radius: 8px;
-            left: 1290px;
-            width: 110px;
+            left:151vh;
+            width: 6vw;
         }
 
         .navbar a:nth-child(1):hover~.animation {
-            left: 1185px;
-            width: 95px;
+            left:141vh;
+            width: 5vw;
         }
 
         .navbar a:nth-child(2):hover~.animation {
-            left: calc(1185px + 100px);
-            width: 120px;
+            left:151vh;
+            width: 6vw;
         }
 
         .navbar a:nth-child(3):hover~.animation {
-            left: calc(1185px + 120px + 100px);
-            width: 90px;
+            left:162.5vh;
+            width: 5vw;
         }
 
         .navbar a:nth-child(4):hover~.animation {
-            left: calc(1175px + 120px + 90px + 105px);
-            width: 110px;
+            left: 171.5vh;
+            width: 6vw;
         }
 
         :root {
@@ -237,12 +237,12 @@
             top:250px;
             margin: 0 auto;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-            border-radius: 15px; /* Rounded corners */
-            backdrop-filter: blur(10px); /* Glassy blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+            background: rgba(255, 255, 255, 0.2); 
+            border-radius: 15px;
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .text-slider {
@@ -317,295 +317,152 @@
 
           
         }
+        
         .toogle-btn {
-            width: 35px;
-            height: 25px;
-            position: absolute;
-            left: 15px; /* Adjust this value to move the button slightly left */
-            top: 27px;   /* Adjust this value to move the button slightly up */
-            display: none; /* Hide by default; show on mobile screens */
+         display: none; 
+        }
+     
+        .toogle-btn img {
+         display: none;
+         }
+     
+        .sidebar .navbar h2 {
+         display: none;
+        }
+     
+        .sidebar-photo {
+        display: none;
+ 
+        }
+
+        @media (max-width: 768px) {
+           
+            .toogle-btn {
+                display: block;
+                position: absolute;
+                left: 15px;
+                top: 27px;
+                z-index: 300;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%; 
+                width: 250px;
+                height: 100vh;
+                background-color: rgba(36, 36, 36, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                z-index: 200;
+            }
+
+            .sidebar.active {
+                left: 0; 
+            }
+            .header .logo {
+                font-size: 25px;
+                left:25px;
+            }
+        
+        
+
+            .sidebar .navbar {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .sidebar .navbar a {
+                padding: 25px 0;
+                font-size: 25px;
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                width: 100%;
+                padding-left: 10px;
+                transition: background 0.3s;
+                margin-left:10px;
+            }
+           
+     
+            .sidebar .navbar a:hover {
+                background-color: #1abc9c;
+            }
+            .sidebar .navbar h2 {
+                font-size: 28px;
+                color: #fff;
+                display: inline-flex;
+                margin: 20px 0; 
+                text-align: center; 
+                position: relative;
+                margin-left:10px;
+            }
+            
+            .sidebar-photo {
+                width: 150px; 
+                height: 150px; 
+                border-radius: 50%;
+                margin: 20px auto; 
+                border: 2px solid white; 
+                position: relative; 
+                object-fit: cover; 
+                display: block; 
+                margin-left:30px;
+        
+            }
+            
+          
+            .border-heading {
+                font-size: 40px;
+                margin-top:150px;
+               
+    
+              
+            }
+            .text-slider-container {
+                position: relative;
+                width: 80%;
+                height: 700px; 
+                top:150px;
+                margin: 0 auto;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.2); 
+                border-radius: 15px; 
+                backdrop-filter: blur(10px); 
+                -webkit-backdrop-filter: blur(10px); 
+                border: 1px solid rgba(255, 255, 255, 0.3); 
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            }
+            .text-slide h1{
+                color: rgb(179, 255, 0);
+                padding-top:5px;
+                font-size: 30px;
+            }
+            .text-slide p{
+                font-size:18px;
+            }
+
+            .toogle-btn img 
+            {
+                display: block;
+                position: absolute;
+                top:-4px;
+                height: 25px;
+                width:25px;
+                background-color: white;
+                border-radius: 20%;
+                padding:5px;
+                
+        
+            }
+            
+            
+        
         }
         
-        .toogle-btn span {
-            display: inline-block;
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            float: left;
-            margin-bottom: 5px;
-        }    
-        /* Base Styles - Mobile First Approach */
-
-/* For small screens (phones, 480px and below) */
-@media (max-width: 480px) {
-    .header {
-        padding: 10px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header .logo {
-        font-size: 24px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .navbar a {
-        margin: 10px 0;
-        font-size: 16px;
-    }
-
-    .text-slider-container {
-        width: 90%;
-        height: 400px; /* Adjust height for smaller screens */
-        top: 150px;
-    }
-
-    .text-slide img {
-        width: 80px; /* Smaller images for smaller screens */
-    }
-
-    .text-slide h1 {
-        font-size: 24px;
-    }
-
-    .text-slide p {
-        font-size: 18px;
-        padding: 8px 15px;
-    }
-
-    .border-heading {
-        font-size: 60px; /* Adjust font size for smaller screens */
-    }
-}
-
-/* For medium screens (tablets, 768px and below) */
-@media (max-width: 768px) {
-    .header {
-        padding: 15px 7%;
-    }
-
-    .header .logo {
-        font-size: 26px;
-    }
-
-    .navbar a {
-        font-size: 17px;
-        margin-left: 25px;
-    }
-
-    .text-slider-container {
-        width: 80%;
-        height: 450px; /* Adjust height for medium screens */
-        top: 200px;
-    }
-
-    .text-slide img {
-        width: 90px; /* Slightly larger images for medium screens */
-    }
-
-    .text-slide h1 {
-        font-size: 28px;
-    }
-
-    .text-slide p {
-        font-size: 20px;
-        padding: 10px 18px;
-    }
-
-    .border-heading {
-        font-size: 80px; /* Adjust font size for medium screens */
-    }
-}
-
-/* For large screens (desktops, above 768px) */
-@media (min-width: 769px) {
-    .header {
-        padding: 15px 10%;
-    }
-
-    .header .logo {
-        font-size: 20px;
-    }
-
-    .navbar a {
-        font-size: 18px;
-        margin-left: 35px;
-    }
-
-    .text-slider-container {
-        width: 50%;
-        height: 500px; 
-        top: 250px;
-    }
-
-    .text-slide img {
-        width: 100px; /* Standard image size for large screens */
-    }
-
-    .text-slide h1 {
-        font-size: 30px;
-    }
-
-    .text-slide p {
-        font-size: 23px;
-        padding: 12px 20px;
-    }
-
-    .border-heading {
-        font-size: 100px; /* Standard font size for large screens */
-    }
-}   
-    /* Responsive adjustments for the text slider */
-
-/* For small screens (phones, 480px and below) */
-   /* Responsive adjustments for the text slider */
-
-/* For small screens (phones, 480px and below) */ 
-   /* For small screens (phones, 480px and below) */
-     @media (max-width: 480px) {
-    .header {
-        padding: 10px 5%;
-    };
-
-    .header .logo {
-        font-size: 18px;
-    }
-
-    .navbar a {
-        font-size: 12px;
-        margin-left: 10px; /* Adjusted margin for very small screens */
-    }
-
-    .navbar .animation {
-        width: 50px;
-    }
-    .text-slider-container {
-        width: 90%;
-        height: 50vh; /* Set height to 50% of the viewport height */
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Adjust positioning */
-        position: absolute;
-        margin: 0; /* Remove any margin */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow-y: auto; /* Enable scrolling */
-        max-height: 80vh; /* Restrict height to viewport height */
-        margin-top: 20px;
-    }
-
-    .text-slider {
-        display: flex;
-    }
-
-    .text-slide {
-        min-width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        padding: 0 10px; /* Add some padding */
-    }
-
-    .text-slide img {
-        width: 60px; /* Smaller images for smaller screens */
-        height: auto;
-        margin-bottom: 15px; /* Space between image and text */
-    }
-
-    .text-slide h1 {
-        font-size: 20px; /* Adjust size for smaller screens */
-       
-    }
-
-    .text-slide p {
-        font-size: 16px; /* Adjust size for smaller screens */
-        padding: 8px 12px;
-        margin: 10px 0; /* Adjust margin */
-    }
-
-    .nav-button {
-        font-size: 1.2rem; /* Adjust size for smaller screens */
-        padding: 6px;
-        width: 35px; /* Adjust width */
-        height: 35px; /* Adjust height */
-    }
-
-    .nav-button.prev {
-        left: 5%; /* Position adjustments */
-    }
-
-    .nav-button.next {
-        right: 5%; /* Position adjustments */
-    }
-
-    .border-heading {
-        font-size: 40px; /* Adjust font size for smaller screens */
-        margin-top:150px;
-    }
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
-        background: linear-gradient(
-            45deg,
-            rgba(36, 36, 36, 0.8) 0%,  /* Semi-transparent dark color */
-            rgba(0, 212, 255, 0.6) 100% /* Semi-transparent light color */
-        );
-        color: #fff;
-        padding: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 99;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .sidebar .close-btn {
-        display: none;
-    }
-
-    .sidebar .navbar a {
-        display: block;
-        padding: 10px;
-        margin-bottom: 10px;
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        transition: background 0.3s;
-    }
-
-    .sidebar .navbar a:hover {
-        background: #575757;
-    }
-    .toogle-btn span 
-    {
-        margin-left:10px;
-        position: relative;
-        
-    }
-    .header .logo {
-        left: 50px;  /* Adjust this value to move the logo slightly to the left */
-        top: -3px;   /* Adjust this value to move the logo slightly up */
-        font-size: 25px; /* Optional: Adjust the font size for smaller screens if needed */
-    }   
-
-}
-}
-
-
         
     </style>
 </head>
@@ -613,13 +470,13 @@
 <body class="about-me"> 
     <header class="header">
         <div class="toogle-btn" onclick="myFunction();">
-            <span></span>
-            <span></span>
-            <span></span>
+            <img src="Icons/side-bar.jpg" alt="side-bar">
         </div>
         <a href="#" class="logo">Portfolio</a>
         <aside class="sidebar">
             <div class="navbar" id="nav">
+                <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
+                <h2>My Portfolio</h2>
                 <a href="home.html">Home</a>
                 <a href="aboutme.html">About Me</a>
                 <a href="skills.html">Skills</a>

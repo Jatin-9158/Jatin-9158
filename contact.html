@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
     <script src="https://kit.fontawesome.com/4777ff6484.js" crossorigin="anonymous"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style>
         * {
             margin: 0;
@@ -13,9 +12,8 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         .header {
-            position: relative;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -48,17 +46,17 @@
         }
 
         .navbar a {
-            font-size: 18px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 35px;
             position: relative;
             transition: color 0.3s;
-            z-index: 10;
+            z-index:10;
         }
 
-        .navbar .animation  {
+        .navbar .animation {
             position: absolute;
             height: 100%;
             top: 0;
@@ -66,29 +64,32 @@
             background: #1abc9c;
             transition: all 0.3s ease-out;
             border-radius: 8px;
-            left: 1501px;
-            width: 95px;
+            left: 171.5vh;
+            width: 6vw;
         }
 
         .navbar a:nth-child(1):hover~.animation {
-            left: 1185px;
-            width: 95px;
+            left:141vh;
+            width: 5vw;
         }
 
         .navbar a:nth-child(2):hover~.animation {
-            left: calc(1185px + 100px);
-            width: 120px;
+            left:151vh;
+            width: 6vw;
         }
 
         .navbar a:nth-child(3):hover~.animation {
-            left: calc(1185px + 120px + 100px);
-            width: 90px;
+            left:162vh;
+            width: 5vw;
         }
 
         .navbar a:nth-child(4):hover~.animation {
-            left: calc(1175px + 120px + 90px + 105px);
-            width: 110px;
+            left: 171.5vh;
+            width: 6vw;
         }
+
+      
+       
 
         .scene {
             position: relative;
@@ -108,6 +109,7 @@
             align-items: center;
             gap: 50px; 
             min-height: 150vh;
+
         }
 
         .earth {
@@ -206,7 +208,7 @@
             color: #fff;
             padding: 20px;
             position: relative;
-            left: -175px; 
+         
         }
         
         .container form #button {
@@ -262,41 +264,20 @@
             font-size:20px;
             font-weight: 1000px;
         } 
-        .toogle-btn {
-            width: 35px;
-            height: 25px;
-            position: absolute;
-            left: 15px; /* Adjust this value to move the button slightly left */
-            top: 27px;   /* Adjust this value to move the button slightly up */
-            display: none; /* Hide by default; show on mobile screens */
+        .toogle-btn img {
+            display: none;
         }
         
-        .toogle-btn span {
-            display: inline-block;
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            float: left;
-            margin-bottom: 5px;
-        }    
+        .sidebar .navbar h2 {
+            display: none;
+        }
+        
+        .sidebar-photo {
+           display: none;
+    
+        }   
         @media (max-width: 1200px) {
-            .header {
-                padding: 15px 7%;
-            }
-        
-            .header .logo {
-                font-size: 24px;
-            }
-        
-            .navbar a {
-                font-size: 16px;
-                margin-left: 30px;
-            }
-        
-            .navbar .animation {
-                width: 85px;
-            }
-        
+            
             .earth {
                 width: 50vh;
                 height: 50vh;
@@ -314,22 +295,6 @@
         }
         
         @media (max-width: 992px) {
-            .header {
-                padding: 15px 5%;
-            }
-        
-            .header .logo {
-                font-size: 20px;
-            }
-        
-            .navbar a {
-                font-size: 14px;
-                margin-left: 20px;
-            }
-        
-            .navbar .animation {
-                width: 70px;
-            }
         
             .earth {
                 width: 40vh;
@@ -347,166 +312,137 @@
                 max-width: 450px;
                 height: auto;
             }
+            
         }
         
         @media (max-width: 768px) {
+
             .header {
                 padding: 15px 5%;
             }
         
             .header .logo {
-                font-size: 20px;
+                font-size: 25px;
+                left:45px;
             }
-        
-            .navbar a {
-                font-size: 14px;
-                margin-left: 10px;
-            }
-        
-        
-            .navbar .animation {
-                width: 60px;
-            }
-         
             .earth {
                 width: 35vh;
                 height: 35vh;
-                margin-right: 60px;
+                margin-left:25%;
+                margin-top:35%;
             }
         
             .container {
                 padding: 10px;
+                height: 500px;
+                overflow: auto;
             }
         
             .container form {
-                width: 90%;
-                max-width: 400px;
+                width: 450px;
                 margin-top: 15px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-                    
-            .earth {
-                width: 32vh;
-                height: 32vh;
-                margin-right: 10px;
-                margin-top: 100px;
-            }
-        
-            .container {
-                flex-direction: column;
-                padding: 5px;
-                align-items: center;
-            }
-            .container form h4 {
-                font-size: 20px;
-                color: #fff;
-                padding: 20px;
-                position: relative;
-                left: -65px; 
-            }
-            
-        
-            .container form {
-                width: 100%; /* Adjusted width to use more available space */
-                max-width: 400px; /* Smaller max-width for a more compact container */
-                padding: 8px; /* Reduced padding for a more compact design */
-                border-radius: 8px; /* Slightly smaller border-radius */
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(8px); /* Slightly less blur for a subtle effect */
-                -webkit-backdrop-filter: blur(8px);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow for a subtle effect */
-                max-height: 50vh; /* Adjusted height for a smaller container */
-                margin-top: 15px; /* Slightly reduced margin-top for better alignment */
-                overflow-y: auto; /* Enable scrolling if content exceeds the height */
-            }
-            
-        
-            .container form input,
-            .container form textarea{
-                font-size: 14px;
-            }
-            .container form #button {
-                font-size: 14px;
-                width:100px;
+
             }
             .toogle-btn {
                 display: block;
-            
-            }
-            .header {
-                padding: 20px 5%;
+                position: absolute;
+                left: 15px;
+                top: 27px;
+                z-index: 300;
                 
             }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100vh;
-            background: linear-gradient(
-                45deg,
-                rgba(36, 36, 36, 0.8) 0%,  /* Semi-transparent dark color */
-                rgba(0, 212, 255, 0.6) 100% /* Semi-transparent light color */
-            );
-            color: #fff;
-            padding: 20px;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 99;
-        }
-
-        .sidebar.active {
-            transform: translateX(0);
-        }
-
-        .sidebar .close-btn {
-            display: none;
-        }
-
-        .sidebar .navbar a {
-            display: block;
-            padding: 10px;
-            margin-bottom: 10px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background 0.3s;
-        }
-
-        .sidebar .navbar a:hover {
-            background: #575757;
-        }
-        .toogle-btn span 
-        {
-            margin-left:10px;
-            position: relative;
-            
-        }
-        .header .logo {
-            left: 50px;  /* Adjust this value to move the logo slightly to the left */
-            top: -3px;   /* Adjust this value to move the logo slightly up */
-            font-size: 25px; /* Optional: Adjust the font size for smaller screens if needed */
-        }   
-
-    }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%; 
+                width: 250px;
+                height: 100vh;
+                background-color: rgba(36, 36, 36, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                z-index: 200;
+            }
         
+       
+            .sidebar.active {
+                left: 0; 
+            }
+ 
+            .sidebar .navbar {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .sidebar .navbar a {
+                padding: 25px 0;
+                font-size: 25px;
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                width: 100%;
+                padding-left: 10px;
+                transition: background 0.3s;
+                margin-left:10px;
+            }
+           
+      
+            .sidebar .navbar a:hover {
+                background-color: #1abc9c;
+            }
+            .sidebar .navbar h2 {
+                font-size: 28px;
+                color: #fff;
+                display: inline-flex;
+                margin: 20px 0; 
+                text-align: center; 
+                position: relative; 
+                margin-left:10px;
+            }
+            
+            .sidebar-photo {
+                width: 150px; 
+                height: 150px; 
+                border-radius: 50%;
+                margin: 20px auto; 
+                border: 2px solid white;
+                position: relative;
+                object-fit: cover; 
+                display: block; 
+                margin-left:30px;
+        
+            }
+            
+            .toogle-btn img 
+            {
+                display: block;
+                position: absolute;
+                top:-4px;
+                height: 25px;
+                width:25px;
+                background-color: white;
+                border-radius: 20%;
+                padding:5px;
+                
+        
+            }
 
-
+              
+         }       
     </style>
 </head>
 <body>
     <header class="header">
             <div class="toogle-btn" onclick="myFunction();">
-                <span></span>
-                <span></span>
-                <span></span>
+                <img src="Icons/side-bar.jpg" alt="side-bar">
             </div>
             <a href="#" class="logo">Portfolio</a>
             <aside class="sidebar">
                 <div class="navbar" id="nav">
+                    <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
+                    <h2>My Portfolio</h2>
                     <a href="home.html">Home</a>
                     <a href="aboutme.html">About Me</a>
                     <a href="skills.html">Skills</a>
@@ -670,9 +606,9 @@
             
             
           
-            </script>
+        </script>
                     
                     
-            </body>
-            </html>
+    </body>
+</html>
             

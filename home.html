@@ -21,7 +21,7 @@
         }
 
         .header {
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -46,9 +46,8 @@
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s;
-            position: relative; /* Ensure relative positioning */
-            left: 0;  /* Default positioning */
-            top: 0;   /* Default positioning */
+            left: 0;
+            top: 0;  
         }
 
         .header .logo:hover {
@@ -56,18 +55,51 @@
         }
  
         .navbar a {
-            font-size: 18px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 35px;
             position: relative;
             transition: color 0.3s;
             z-index:10;
         }
-
+        .navbar span {
+            background:#00ccff;
+        }
         .navbar a:hover {
             background-clip: border-box;
+        }
+        .navbar .animation {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 1;
+            background: #1abc9c;
+            transition: all 0.3s ease-out;
+            border-radius: 8px;
+            left: 137.5vh; 
+            width: 5vw; 
+        }
+        
+        .navbar a:nth-child(1):hover~.animation {
+            left: 137.5vh; 
+            width: 5vw; 
+        }
+        
+        .navbar a:nth-child(2):hover~.animation {
+            left: 148.5vh; 
+            width: 6vw; 
+        }
+        
+        .navbar a:nth-child(3):hover~.animation {
+            left: 161vh;
+            width: 5vw; 
+        }
+        
+        .navbar a:nth-child(4):hover~.animation {
+            left: 171vh;
+            width: 6vw; 
         }
 
         .home {
@@ -117,11 +149,6 @@
         .home-content h2 {
             margin-top: 22px;
         }
-        
-        .navbar span {
-            background:#00ccff;
-        }
-
         .home-content p {
             font-size: 16px;
             margin-bottom: 20px;
@@ -275,39 +302,6 @@
             height: 12px;
             background: #fff;
         }
-
-        .navbar .animation {
-            position: absolute;
-            height: 100%;
-            top: 0;
-            z-index: 1;
-            background: #1abc9c;
-            transition: all 0.3s ease-out;
-            border-radius: 8px;
-            left: 1185px; 
-            width: 95px; 
-        }
-        
-        .navbar a:nth-child(1):hover~.animation {
-            left: 1185px; 
-            width: 95px; 
-        }
-        
-        .navbar a:nth-child(2):hover~.animation {
-            left: calc(1185px + 100px); 
-            width: 120px; 
-        }
-        
-        .navbar a:nth-child(3):hover~.animation {
-            left: calc(1185px + 120px + 100px); 
-            width: 90px; 
-        }
-        
-        .navbar a:nth-child(4):hover~.animation {
-            left: calc(1175px + 120px + 90px + 105px);
-            width: 110px; 
-        }
-
         .Button-Download {
             background-color: white;
             border-radius: 50px;
@@ -329,98 +323,140 @@
         }
 
         .toogle-btn {
-            width: 35px;
-            height: 25px;
-            position: absolute;
-            left: 15px; /* Adjust this value to move the button slightly left */
-            top: 27px;   /* Adjust this value to move the button slightly up */
-            display: none; /* Hide by default; show on mobile screens */
+            display: none;
         }
         
-        .toogle-btn span {
-            display: inline-block;
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-            float: left;
-            margin-bottom: 5px;
+        .toogle-btn img {
+            display: none;
+        }
+        
+        .sidebar .navbar h2 {
+            display: none;
+        }
+        
+        .sidebar-photo {
+           display: none;
         }
         
 
         @media (max-width: 768px) {
-        .toogle-btn {
+   
+            .toogle-btn {
                 display: block;
+                position: absolute;
+                left: 15px;
+                top: 27px;
+                z-index: 300;
+            }
+        
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%; 
+                width: 250px;
+                height: 100vh;
+                background-color: rgba(36, 36, 36, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                z-index: 200;
+            }
             
+        
+            .sidebar.active {
+                left: 0; 
+            }
+        
+         
+            .sidebar .navbar {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .sidebar .navbar a {
+                padding: 25px 0;
+                font-size: 25px;
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                width: 100%;
+                padding-left: 10px;
+                transition: background 0.3s;
+                margin-left:10px;
+            }
+
+            .sidebar .navbar a:hover {
+                background-color: #1abc9c;
+            }
+            .sidebar .navbar h2 {
+                font-size: 28px;
+                color: #fff;
+                display: inline-flex;
+                margin: 20px 0; 
+                text-align: center; 
+                position: relative; 
+                margin-left:10px;
+            }
+            
+            .sidebar-photo {
+                width: 150px;
+                height: 150px; 
+                border-radius: 50%;
+                margin: 20px auto; 
+                border: 2px solid white; 
+                position: relative; 
+                object-fit: cover; 
+                display: block;
+                margin-left:30px;
+        
+            }
+            
+            .toogle-btn img 
+            {
+                display: block;
+                position: absolute;
+                top:-4px;
+                height: 25px;
+                width:25px;
+                background-color: white;
+                border-radius: 20%;
+                padding:5px;
+                
+        
             }
             .header {
-                padding: 20px 5%;
-                
+                padding: 20px 5%;       
             }
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100vh;
-            background: linear-gradient(
-                45deg,
-                rgba(36, 36, 36, 0.8) 0%,  /* Semi-transparent dark color */
-                rgba(0, 212, 255, 0.6) 100% /* Semi-transparent light color */
-            );
-            color: #fff;
-            padding: 20px;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 99;
-        }
+           .box
+           {
+             left: 22%;
+           }
+           .animated-text
+           {
+              font-size:28px;
+           }
+           .header .logo 
+           {
+             left:7%;
+             position: relative;
+             top:-5px;
+           }
 
-        .sidebar.active {
-            transform: translateX(0);
-        }
-
-        .sidebar .close-btn {
-            display: none;
-        }
-
-        .sidebar .navbar a {
-            display: block;
-            padding: 10px;
-            margin-bottom: 10px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background 0.3s;
-        }
-
-        .sidebar .navbar a:hover {
-            background: #575757;
-        }
-        .toogle-btn span 
-        {
-            margin-left:10px;
-            position: relative;
-            
-        }
-        .header .logo {
-            left: 50px;  /* Adjust this value to move the logo slightly to the left */
-            top: -3px;   /* Adjust this value to move the logo slightly up */
-            font-size: 25px; /* Optional: Adjust the font size for smaller screens if needed */
-            
-        }
-       
-   }    
+}
     </style>
 </head>
 <body>
     <header class="header">
         <div class="toogle-btn" onclick="myFunction();">
-            <span></span>
-            <span></span>
-            <span></span>
+            <img src="Icons/side-bar.jpg" alt="side-bar">
         </div>
         <a href="#" class="logo">Portfolio</a>
         <aside class="sidebar">
             <div class="navbar" id="nav">
+                <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
+                <h2>My Portfolio</h2>
                 <a href="home.html">Home</a>
                 <a href="aboutme.html">About Me</a>
                 <a href="skills.html">Skills</a>
