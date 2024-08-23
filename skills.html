@@ -22,93 +22,73 @@
            
         }
         .header {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 10%;
+            height:8.5%;
+            padding: 25px 10%;
             background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 200;
+            z-index: 100;
             transition: background 0.3s, padding 0.3s;
         }
 
         .header.scrolled {
             background: rgba(36, 36, 36, 0.8);
-            padding: 10px 10%;
+            padding: 15px 10%;
         }
 
         .header .logo {
-            font-size: 28px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s;
-            position: relative;
+            left: 0;
+            top: 0;  
         }
 
         .header .logo:hover {
             transform: scale(1.1);
         }
-
-        .navbar a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
+ 
+        .navbar span {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: transparent; 
+            font-size: 15px;
             font-weight: 600;
-            margin-left: 35px;
-            position: relative;
-            transition: color 0.3s;
-            z-index:10;
+            color: #fff;
+            border: 2px solid transparent; 
+            border-radius: 8px; 
+            transition: all 0.3s ease;
+            margin-left: 5px; 
+            margin-right: 5px;
+            z-index: 10;
+            cursor: pointer; 
+        } 
+        .navbar span:hover {
+            background-color: #1abc9c; 
+            color: #fff;
+            border: 2px solid #1abc9c; 
         }
-
-        .navbar .animation {
-            position: absolute;
-            height: 100%;
-            top: 0;
-            z-index: 1;
-            background: #1abc9c;
-            transition: all 0.3s ease-out;
-            border-radius: 8px;
-            left:162.5vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(1):hover~.animation {
-            left:141vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(2):hover~.animation {
-            left:151vh;
-            width: 6vw;
-        }
-
-        .navbar a:nth-child(3):hover~.animation {
-            left:162.5vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(4):hover~.animation {
-            left: 171.5vh;
-            width: 6vw;
-        }
-
+       
         .skill {
-            width: 600px;
-            height: 700px;
-            margin-top:150px;
-            margin-left:130px;
+            width: 450px;
+            height: 600px;
+            margin-top:110px;
+            margin-left:125px;
             background: rgba(255, 255, 255, 0.2); 
             border-radius: 15px; 
             backdrop-filter: blur(15px); 
             -webkit-backdrop-filter: blur(15px); 
             border: 1px solid rgba(255, 255, 255, 0.3); 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            padding: 20px; 
+            padding: 12px; 
             position: relative; 
             animation: glowing 5s infinite ease-in; 
         }
@@ -118,7 +98,7 @@
         }
 
         .skill h3 {
-            margin: 5px;
+            margin: 4.5px;
             color: black;
         }
 
@@ -145,8 +125,8 @@
             padding: 10px;
         }
         h3 .icon {
-            width: 30px; 
-            height: 30px; 
+            width: 28px; 
+            height: 28px; 
           
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(30, 224, 224, 0.8); 
@@ -160,7 +140,7 @@
         .bar {
             background: #353b48;
             display: block;
-            height: 20px; 
+            height: 18px; 
             border: 1px solid rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             overflow: hidden;
@@ -173,7 +153,7 @@
         }
 
         .bar span {
-            height: 20px;
+            height: 18px;
             float: left;
             background: linear-gradient(135deg, rgba(236, 0, 140, 1) 0%, rgba(252, 103, 103, 1) 100%);
         }
@@ -248,9 +228,9 @@
             }
         }
         .skill2 {
-            width: 750px;
-            height: 600px;
-            margin: 150px auto;
+            width: 630px;
+            height: 500px;
+            margin: 125px auto;
             display: flex;
             flex-wrap: wrap; 
             justify-content: space-around; 
@@ -262,6 +242,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
             animation: glowing 5s infinite ease-in; 
+            
 
         }
         .skill2 h1 {
@@ -276,8 +257,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             margin: 15px; 
             background: rgba(255, 255, 255, 0.1);
@@ -295,8 +276,8 @@
         .skill2 .circle::after {
             content: '';
             position: absolute;
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             background: #333;
             border: 15px solid #4d4c51;
             border-radius: 50%;
@@ -324,10 +305,10 @@
             color: #fff;
             z-index: 10;
             font-weight: 500;
-            font-size: 0.8em;
+            font-size: 11px;
             text-transform: uppercase;
             margin: 10px;
-            line-height: 0.6em;
+            line-height: 0.1em;
         }
         .toogle-btn {
          display: none;
@@ -358,8 +339,9 @@
             }
         
             .header .logo {
-                font-size: 25px;
-                left:40px;
+                font-size: 20px;
+                margin-left: 10%;
+           
             }
         
             .navbar a {
@@ -372,6 +354,7 @@
             .skill {
                 width: 80%;
                 padding: 50px;
+                height: auto;
                 margin:20px;
                 margin-top: 85px;
                 
@@ -471,6 +454,7 @@
                 border-radius: 20%;
                 padding:5px;
                 
+                
         
             }
             .header {
@@ -482,21 +466,20 @@
         
         }
         @media only screen and (max-width: 600px) {
-              .sidebar {
+            .sidebar {
                 width: 150px; 
             }
-        
             .sidebar .navbar a {
-                font-size: 20px; /* Make navbar links smaller */
-                padding: 15px 0; /* Reduce padding between links */
+                font-size: 20px; 
+                padding: 15px 0; 
             }
         
             .sidebar .navbar h2 {
-                font-size: 24px; /* Adjust the "My Portfolio" text size */
+                font-size: 24px; 
             }
         
             .sidebar-photo {
-                width: 100px; /* Smaller profile photo */
+                width: 100px;
                 height: 100px; 
             }
         }
@@ -515,11 +498,10 @@
             <div class="navbar" id="nav">
                 <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
                 <h2>My Portfolio</h2>
-                <a href="home.html">Home</a>
-                <a href="aboutme.html">About Me</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-                <div class="animation start-home"></div>
+                <a href="home.html"><span>Home</span></a>
+                <a href="aboutme.html"><span>About Me</span></a>
+                <a href="skills.html"><span>Skills</span></a>
+                <a href="contact.html"><span>Contact</span></a>
             </div>
         </aside> 
     </header>
@@ -562,7 +544,7 @@
         </div>
         <div class="circle" data-degree="89" data-color="#6699FF">
             <h2 class="number">89<span>%</span></h2>
-            <h4 style="font-size:11px ">Project Management</h4>
+            <h4 style="font-size:9px ">Project Management</h4>
         </div>
         <div class="circle" data-degree="60" data-color="#CCCC00">
             <h2 class="number">60<span>%</span></h2>

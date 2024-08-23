@@ -12,12 +12,14 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         .header {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 10%;
+            height:8.5%;
+            padding: 25px 10%;
             background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -29,67 +31,44 @@
 
         .header.scrolled {
             background: rgba(36, 36, 36, 0.8);
-            padding: 10px 10%;
+            padding: 15px 10%;
         }
 
         .header .logo {
-            font-size: 28px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s;
-            position: relative;
+            position: absolute;
+            left: 10%;
+            top: 25%;  
         }
 
         .header .logo:hover {
             transform: scale(1.1);
         }
-
-        .navbar a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
+ 
+        .navbar span {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: transparent; 
+            font-size: 15px;
             font-weight: 600;
-            margin-left: 35px;
-            position: relative;
-            transition: color 0.3s;
-            z-index:10;
+            color: #fff;
+            border: 2px solid transparent; 
+            border-radius: 8px; 
+            transition: all 0.3s ease;
+            margin-left: 5px; 
+            margin-right: 5px;
+            z-index: 10;
+            cursor: pointer; 
+        } 
+        .navbar span:hover {
+            background-color: #1abc9c; 
+            color: #fff;
+            border: 2px solid #1abc9c; 
         }
-
-        .navbar .animation {
-            position: absolute;
-            height: 100%;
-            top: 0;
-            z-index: 1;
-            background: #1abc9c;
-            transition: all 0.3s ease-out;
-            border-radius: 8px;
-            left: 171.5vh;
-            width: 6vw;
-        }
-
-        .navbar a:nth-child(1):hover~.animation {
-            left:141vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(2):hover~.animation {
-            left:151vh;
-            width: 6vw;
-        }
-
-        .navbar a:nth-child(3):hover~.animation {
-            left:162vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(4):hover~.animation {
-            left: 171.5vh;
-            width: 6vw;
-        }
-
-      
-       
 
         .scene {
             position: relative;
@@ -108,18 +87,19 @@
             justify-content: center;
             align-items: center;
             gap: 50px; 
-            min-height: 150vh;
+            min-height: 120vh;
 
         }
 
         .earth {
-            width: 64.444vh;
-            height: 64.444vh;
+            width: 60.444vh;
+            height: 60.444vh;
             border-radius: 50%;
             background: url("Img/6.jpeg");
             box-shadow: inset 1.9vh -2vh 5vh 1vh #080606, 0px 0px 3vh 0.6vh #000;
             animation:  rotate 5s linear infinite, glowing 5s linear infinite;
-            margin-right:200px;
+            margin-right:140px;
+            margin-top:20px;
             z-index: 2;
         }
 
@@ -132,9 +112,10 @@
             }
         }
         .container form {
-            width: 600px;
-            height:650px;
+            width: 450px;
+            height:480px;
             padding: 20px;
+            margin-top:60px;
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
@@ -165,30 +146,31 @@
         .container form h1 {
             color: #fff;
             font-weight: 600;
-            line-height: 2;
-            margin-bottom: 10px;
-            padding-top:15px;
-            padding-bottom:15px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            padding-top:10px;
+            padding-bottom:5px;
             text-align: center;
+            font-size:28px;
         }
         
         .input-row {
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .container form input,
         .container form textarea {
-            width: 43%; 
-            padding: 20px;
-            height: 50%;
+            width: 40%; 
+            padding: 18px;
+            height: 20%;
             border: none;
             border-bottom: 2px solid #fff;
             background: transparent;
             color: #fff;
-            font-size: 18px;
+            font-size: 12px;
         }
         
         .container form input::placeholder,
@@ -198,15 +180,14 @@
         
         .container form textarea {
             width: 100%;
-            height:125px;
-            min-height: 80px;
-            max-height: 180px;
+            height:100px;
+           
         }
         
         .container form h4 {
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             position: relative;
          
         }
@@ -216,10 +197,10 @@
             background: #fff;
             border-radius: 5px;
             font-weight: 600;
-            font-size: 24px;
+            font-size: 21px;
             color: #000;
-            width: 200px;
-            height: 60px;
+            width: 145px;
+            height: 45px;
             transition: 0.3s;
             cursor: pointer;
             margin-top: 20px;
@@ -279,13 +260,13 @@
         @media (max-width: 1200px) {
             
             .earth {
-                width: 50vh;
-                height: 50vh;
+                width: 44.44vh;
+                height: 44.44vh;
                 margin-right: 150px;
             }
         
             .container {
-                gap: 30px;
+                gap: 20px;
             }
         
             .container form {
@@ -389,8 +370,9 @@
             }
            
       
-            .sidebar .navbar a:hover {
+            .sidebar .navbar a:hover::after {
                 background-color: #1abc9c;
+                width: 1px;
             }
             .sidebar .navbar h2 {
                 font-size: 28px;
@@ -418,8 +400,8 @@
             .toogle-btn img 
             {
                 display: block;
-                position: absolute;
-                top:-4px;
+                position: relative;
+                top:0px;
                 height: 25px;
                 width:25px;
                 background-color: white;
@@ -428,6 +410,7 @@
                 
         
             }
+            
             .container form h1 {
                 font-size: 30px;
                 padding:5px;
@@ -440,7 +423,12 @@
                 padding: 5px;
                 height: 28px;
                 font-size: 12px;
-            }       
+            } 
+            .header .logo {
+                font-size: 20px;
+                margin-left: 25px;
+           
+            }      
          }
          @media (max-width: 600px) {
 
@@ -461,30 +449,30 @@
             }
         
             .container {
-                width: 90%; /* Make the container smaller */
-                padding: 5px; /* Add padding for spacing */
-                height: auto; /* Adjust height for smaller screens */
-                margin: 0 auto; /* Center the container */
-                overflow-y: visible; /* Remove scroll on smaller screens */
+                width: 90%;
+                padding: 5px;
+                height: auto; 
+                margin: 0 auto;
+                overflow-y: visible; 
             }
         
             .container form {
-                width: 100%; /* Full width for the form */
+                width: 100%;
                 margin-top: 5px;
             }
             
             .container form h1 {
-                font-size: 24px; /* Smaller heading size */
+                font-size: 24px; 
             }
         
             .container form input {
-                width: 38%; /* Full width inputs and text areas */
+                width: 38%; 
                 padding: 10px;
-                font-size: 14px; /* Slightly smaller font size */
+                font-size: 14px;
             }
         
             .container form textarea {
-                height: 50px; /* Adjust height for the textarea */
+                height: 50px; 
                 width:100%;
                 font-size: 14px;
             }
@@ -525,7 +513,8 @@
             .toogle-btn img {
                 height: 20px;
                 width: 20px;
-                padding: 3px;
+                padding: 5px;
+                margin-top:10%;
             }
             .container form #button {
                 
@@ -535,6 +524,7 @@
                 font-style:700px;
             }
             
+           
         }
           
 
@@ -551,11 +541,10 @@
                 <div class="navbar" id="nav">
                     <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
                     <h2>My Portfolio</h2>
-                    <a href="home.html">Home</a>
-                    <a href="aboutme.html">About Me</a>
-                    <a href="skills.html">Skills</a>
-                    <a href="contact.html">Contact</a>
-                    <div class="animation start-home"></div>
+                    <a href="home.html"><span>Home</span></a>
+                    <a href="aboutme.html"><span>About Me</span></a>
+                    <a href="skills.html"><span>Skills</span></a>
+                    <a href="contact.html"><span>Contact</span></a>
                 </div>
             </aside> 
     </header>

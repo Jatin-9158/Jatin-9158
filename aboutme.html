@@ -16,17 +16,18 @@
         }
 
         body {
+           
             background-color: white;
             overflow-x: hidden;
             font-size: 16px;
         }
-
         .header {
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 10%;
+            height:8.5%;
+            padding: 25px 10%;
             background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -38,64 +39,44 @@
 
         .header.scrolled {
             background: rgba(36, 36, 36, 0.8);
-            padding: 10px 10%;
+            padding: 15px 10%;
         }
 
         .header .logo {
-            font-size: 28px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
             font-weight: 700;
             transition: transform 0.3s;
-            position: relative;
+            left: 0;
+            top: 0;  
         }
 
         .header .logo:hover {
             transform: scale(1.1);
         }
-
-        .navbar a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
+ 
+        .navbar span {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: transparent; 
+            font-size: 15px;
             font-weight: 600;
-            margin-left: 35px;
-            position: relative;
-            transition: color 0.3s;
-            z-index:10;
+            color: #fff;
+            border: 2px solid transparent; 
+            border-radius: 8px; 
+            transition: all 0.3s ease;
+            margin-left: 5px; 
+            margin-right: 5px;
+            z-index: 10;
+            cursor: pointer; 
+        } 
+        .navbar span:hover {
+            background-color: #1abc9c; 
+            color: #fff;
+            border: 2px solid #1abc9c; 
         }
-
-        .navbar .animation {
-            position: absolute;
-            height: 100%;
-            top: 0;
-            z-index: 1;
-            background: #1abc9c;
-            transition: all 0.3s ease-out;
-            border-radius: 8px;
-            left:151vh;
-            width: 6vw;
-        }
-
-        .navbar a:nth-child(1):hover~.animation {
-            left:141vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(2):hover~.animation {
-            left:151vh;
-            width: 6vw;
-        }
-
-        .navbar a:nth-child(3):hover~.animation {
-            left:162.5vh;
-            width: 5vw;
-        }
-
-        .navbar a:nth-child(4):hover~.animation {
-            left: 171.5vh;
-            width: 6vw;
-        }
+        
 
         :root {
             --color-bg1: rgb(108, 0, 162);
@@ -233,8 +214,8 @@
         .text-slider-container {
             position: relative;
             width: 50%;
-            height: 500px; 
-            top:250px;
+            height: 400px; 
+            top:240px;
             margin: 0 auto;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.2); 
@@ -260,29 +241,21 @@
             color: #fff;
         }
         
-        .text-slide img {
-            border-radius: 10%;
-            width: 100px; /* Adjust size as needed */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Space between image and text */
-        }
-        
         .text-slide h1{
             color: rgb(179, 255, 0);
             padding-top:40px;
-            font-size: 30px;
+            font-size: 25px;
         }
         .text-slide p {
-            margin: 20px;
+            margin: 15px;
             font-style: italic;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 23px;
+            font-size: 19px;
             text-align: center;
-            padding: 12px 20px; 
+            padding: 8px 15px; 
             color: antiquewhite;
             letter-spacing: 0.5px;
-            line-height: 33px;
-
+            line-height: 30px;
             border-radius: 10px;
         }
         
@@ -292,8 +265,8 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
             border: none;
-            font-size: 2rem;
-            padding: 10px;
+            font-size: 1.8rem;
+            padding: 8px;
             cursor: pointer;
             border-radius: 50%;
             z-index: 10;
@@ -308,12 +281,11 @@
             right: 10px;
         }
         .border-heading {
-            font-size: 32px;
+            font-size: 70px;
             font-weight: bold;
             color: #f5be07d2;
             text-align: center;
             margin: 90px 0;
-            font-size: 100px;
 
           
         }
@@ -349,7 +321,7 @@
                 position: fixed;
                 top: 0;
                 left: -100%; 
-                width: 250px;
+                width: 150px;
                 height: 100vh;
                 background-color: rgba(36, 36, 36, 0.9);
                 display: flex;
@@ -402,8 +374,8 @@
             }
             
             .sidebar-photo {
-                width: 150px; 
-                height: 150px; 
+                width: 100px; 
+                height: 100px; 
                 border-radius: 50%;
                 margin: 20px auto; 
                 border: 2px solid white; 
@@ -417,7 +389,7 @@
           
             .border-heading {
                 font-size: 40px;
-                margin-top:150px;
+                margin-top:180px;
                
     
               
@@ -463,14 +435,18 @@
         
         }
         @media (max-width: 600px) {
+            .html,.body{
+                overflow-y: auto;
+            }
+            .header .logo {
+                position: relative;
+                left: 10%;
+                font-size: 20px;
+                top: 0;
+            }
             .header {
                 padding: 15px 5%;
             }
-        
-            .header .logo {
-                font-size: 22px;
-            }
-        
             .navbar a {
                 font-size: 18px;
                 margin-left: 20px;
@@ -478,13 +454,13 @@
         
             .border-heading {
                 font-size: 35px;
-                margin-top:85px;
+                margin-top:150px;
             }
         
             .text-slider-container {
                 width: 90%;
                 height: auto; /* Adjusted height */
-                top: 100px; /* Adjusted for better layout */
+                top: 250px; /* Adjusted for better layout */
             }
         
             .text-slide h1 {
@@ -505,7 +481,7 @@
             .toogle-btn img {
                 height: 20px;
                 width: 20px;
-            }
+                top:0px;
         
             .sidebar-photo {
                 width: 100px;
@@ -518,7 +494,7 @@
             }
             
             .sidebar {
-                width: 150px; 
+                width: 120px; 
             }
             .gradient-bg {
                 width: 100vw;
@@ -541,11 +517,10 @@
             <div class="navbar" id="nav">
                 <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
                 <h2>My Portfolio</h2>
-                <a href="home.html">Home</a>
-                <a href="aboutme.html">About Me</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-                <div class="animation start-home"></div>
+                <a href="home.html"><span>Home</span></a>
+                <a href="aboutme.html"><span>About Me</span></a>
+                <a href="skills.html"><span>Skills</span></a>
+                <a href="contact.html"><span>Contact</span></a>
             </div>
         </aside> 
     </header>
@@ -631,4 +606,4 @@
         }); 
     </script>
 </body>
-</html>
+</html>    

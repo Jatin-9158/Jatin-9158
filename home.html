@@ -25,7 +25,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 10%;
+            height:8.5%;
+            padding: 15px 10%;
             background: linear-gradient(90deg, rgba(36, 36, 36, 0.8), rgba(0, 212, 255, 0.8));
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -37,11 +38,11 @@
 
         .header.scrolled {
             background: rgba(36, 36, 36, 0.8);
-            padding: 10px 10%;
+            padding: 15px 10%;
         }
 
         .header .logo {
-            font-size: 28px;
+            font-size: 20px;
             color: #fff;
             text-decoration: none;
             font-weight: 700;
@@ -53,55 +54,29 @@
         .header .logo:hover {
             transform: scale(1.1);
         }
- 
-        .navbar a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            margin-left: 35px;
-            position: relative;
-            transition: color 0.3s;
-            z-index:10;
-        }
-        .navbar span {
-            background:#00ccff;
-        }
-        .navbar a:hover {
-            background-clip: border-box;
-        }
-        .navbar .animation {
-            position: absolute;
-            height: 100%;
-            top: 0;
-            z-index: 1;
-            background: #1abc9c;
-            transition: all 0.3s ease-out;
-            border-radius: 8px;
-            left: 137.5vh; 
-            width: 5vw; 
-        }
-        
-        .navbar a:nth-child(1):hover~.animation {
-            left: 137.5vh; 
-            width: 5vw; 
-        }
-        
-        .navbar a:nth-child(2):hover~.animation {
-            left: 148.5vh; 
-            width: 6vw; 
-        }
-        
-        .navbar a:nth-child(3):hover~.animation {
-            left: 161vh;
-            width: 5vw; 
-        }
-        
-        .navbar a:nth-child(4):hover~.animation {
-            left: 171vh;
-            width: 6vw; 
-        }
 
+        .navbar span {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: transparent; 
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            border: 2px solid transparent; 
+            border-radius: 8px; 
+            transition: all 0.3s ease;
+            margin-left: 5px; 
+            margin-right: 5px;
+            z-index: 10;
+            cursor: pointer; 
+        } 
+        .navbar span:hover {
+            background-color: #1abc9c; 
+            color: #fff;
+            border: 2px solid #1abc9c; 
+        }
+        
+        
         .home {
             width: 100%;
             height: 100vh;
@@ -111,18 +86,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 70px 10%;
+            padding: 70 10%;
+            padding-top:30px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .home-content {
-            max-width: 650px;
-            max-height: 750px;
+            max-width: 660px;
+            max-height: 600px;
             color: #fff;
             background: rgba(0, 0, 0, 0.6);
-            padding: 28px;
+            padding: 20px;
+            margin-top:50px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -130,13 +107,13 @@
         }
 
         .home-content h3 {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 400;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .home-content h1 {
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 700;
             margin-bottom: 0px;
             letter-spacing: 0px;
@@ -147,19 +124,19 @@
         }
 
         .home-content h2 {
-            margin-top: 22px;
+            margin-top: 20px;
         }
         .home-content p {
-            font-size: 16px;
+            font-size: 17px;
             margin-bottom: 20px;
             line-height: 1.6;
         }
 
         .box {
             position: relative;
-            width: 200px;
-            height: 200px;
-            left: 32%;
+            width: 170px;
+            height: 170px;
+            left: 37%;
             border-radius: 50%;
             background: url("Img/4.jpg");
             background-size: 250px;
@@ -169,8 +146,8 @@
         .glow::after {
             content: "";
             position: absolute;
-            width: 204px;
-            height: 204px;
+            width: 174px;
+            height: 174px;
             left: -2px;
             top: -2px;
             bottom: -2px;
@@ -198,7 +175,7 @@
         }
 
         .animated-text {
-            font-size: 34px;
+            font-size: 24px;
             font-weight: 600;
             min-width: 280px;
             position: relative;
@@ -239,7 +216,7 @@
         .wrapper {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 21px;
         }
 
         .wrapper .icon {
@@ -254,8 +231,8 @@
         }
 
         .wrapper .icon span {
-            height: 60px;
-            width: 60px;
+            height: 50px;
+            width: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -270,7 +247,7 @@
         }
 
         .wrapper .icon span i {
-            font-size: 25px;
+            font-size: 20px;
             color: #333;
         }
 
@@ -310,7 +287,7 @@
             color: black;
             font-weight: 700;
             font-size: 18px;
-            padding: 0.5rem 2rem; 
+            padding: 0.3rem 1.8rem; 
             line-height: 2.5rem; 
             border: 2px solid black;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -416,8 +393,7 @@
             .toogle-btn img 
             {
                 display: block;
-                position: relative;
-                top:-4px;
+                position: absolute;
                 height: 25px;
                 width:25px;
                 background-color: white;
@@ -441,9 +417,9 @@
            }
            .header .logo 
            {
-             left:7%;
+             left:10%;
              position: relative;
-             top:-5px;
+             top:0px;
            }
         }   
            @media (max-width: 600px) {
@@ -451,87 +427,96 @@
             .html,.body{
                 overflow-y: auto;
             }
-            .header .logo {
-                left: 5%;
-                font-size: 20px;
-                top: 0;
-            }
-        
             .header.scrolled {
                 padding: 5px 5%; 
             }
-        
-            /* Adjusting the sidebar for smaller screens */
-            .sidebar {
-                width: 200px; 
-            }
-        
             .sidebar .navbar a {
-                font-size: 20px; /* Make navbar links smaller */
-                padding: 15px 0; /* Reduce padding between links */
+                font-size: 20px; 
+                padding: 15px 0; 
             }
         
             .sidebar .navbar h2 {
-                font-size: 24px; /* Adjust the "My Portfolio" text size */
+                font-size: 24px; 
             }
         
             .sidebar-photo {
-                width: 100px; /* Smaller profile photo */
+                width: 100px; 
                 height: 100px; 
             }
         
             .home {
-                padding: 30px 5%; /* Reduce padding for mobile */
-                padding-top:160px;
+                padding: 30px 5%; 
+                padding-top:80px;
             }
         
             .home-content {
-                max-width: 300px; /* Limit content width for smaller screens */
-                padding: 20px; /* Reduce padding */
-                height:auto;
+                max-width: 320px; 
+                padding: 20px; 
+                height: auto;
             }
         
             .home-content h1 {
-                font-size: 34px; /* Smaller heading size */
+                font-size: 34px;
             }
         
             .home-content h3, .home-content p {
-                font-size: 14px; /* Adjust text size for smaller screens */
+                font-size: 14px; 
             }
         
             .box {
-                width: 150px; /* Smaller box size */
+                width: 150px; 
                 height: 150px;
-                left: 20%; /* Adjust position */
+                left: 22%; 
             }
             
         
-            /* Adjusting the animated text */
             .animated-text {
-                font-size: 24px; /* Smaller animated text */
+                font-size: 24px;
             }
         
             .wrapper .icon {
-                margin: 0 10px; /* Reduce space between icons */
+                margin: 0 10px;
             }
         
             .wrapper .icon span {
-                height: 50px; /* Smaller icon container */
-                width: 50px;
+                height: 40px; 
+                width: 40px;
             }
         
             .wrapper .icon span i {
-                font-size: 20px; /* Smaller icon size */
+                font-size: 20px; 
             }
         
-            /* Download Button size adjustment */
+       
             .Button-Download {
                 font-size: 16px;
-                padding: 0.4rem 1.5rem; /* Smaller padding for mobile */
+                padding: 0.4rem 1.5rem; 
             }
             .sidebar {
-                width: 150px; 
+                width: 150px;
+                padding: 20px;
+                background-color: #2c3e50;
+                position: fixed;
+                height: 100%;
             }
+        
+            .sidebar span {
+                display: block;
+                padding: 10px 20px;
+                color: #fff; 
+                border-radius: 5px; 
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: bold; 
+                cursor: pointer; 
+                text-align: center; 
+                transition: background-color 0.3s ease, transform 0.3s ease; 
+            }
+       
+            .sidebar span:hover {
+                background-color: #1abc9c;
+                transform: scale(1.05); 
+            } 
         
         }
         
@@ -549,11 +534,11 @@
             <div class="navbar" id="nav">
                 <img src="Img/2.jpg" alt="Profile Photo" class="sidebar-photo">
                 <h2>My Portfolio</h2>
-                <a href="home.html">Home</a>
-                <a href="aboutme.html">About Me</a>
-                <a href="skills.html">Skills</a>
-                <a href="contact.html">Contact</a>
-                <div class="animation start-home"></div>
+                <a href="home.html"><span>Home</span></a>
+                <a href="aboutme.html"><span>About Me</span></a>
+                <a href="skills.html"><span>Skills</span></a>
+                <a href="contact.html"><span>Contact</span></a>
+                
             </div>
         </aside>   
     </header>
