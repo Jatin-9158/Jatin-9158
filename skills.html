@@ -380,7 +380,7 @@
             }
         
             .sidebar {
-                position: fixed;
+                position: absolute;
                 top: 0;
                 left: -100%; 
                 width: 250px;
@@ -407,7 +407,7 @@
         
             .sidebar .navbar a {
                 padding: 25px 0;
-                font-size: 25px;
+                font-size: 20px;
                 color: white;
                 text-decoration: none;
                 font-weight: 600;
@@ -417,9 +417,23 @@
                 margin-left:10px;
             }
 
-            .sidebar .navbar a:hover {
-                background-color: #1abc9c;
+            .sidebar span {
+                display: block;
+                padding: 10px 20px;
+                color: #fff; 
+                border-radius: 5px; 
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: bold; 
+                cursor: pointer; 
+                text-align: center; 
+                transition: background-color 0.3s ease, transform 0.3s ease; 
             }
+       
+            .sidebar span:hover {
+                background-color: #1abc9c;
+             
+            } 
             .sidebar .navbar h2 {
                 font-size: 28px;
                 color: #fff;
@@ -482,6 +496,23 @@
                 width: 100px;
                 height: 100px; 
             }
+            .sidebar span {
+                display: block;
+                padding: 10px 20px;
+                color: #fff; 
+                border-radius: 5px; 
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: bold; 
+                cursor: pointer; 
+                text-align: center; 
+                transition: background-color 0.3s ease, transform 0.3s ease; 
+            }
+       
+            .sidebar span:hover {
+                background-color: #1abc9c;
+             
+            } 
         }
         
 
