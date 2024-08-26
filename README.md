@@ -6,7 +6,7 @@ I'm a passionate programmer and learner currently studying Information Science &
 
 - 👀 I'm interested in problem-solving, algorithms, and software development.
 - 🌱 I'm currently learning advanced data structures, algorithms, and software engineering principles.
-- 💼 I've solved over 100 problems on platforms like LeetCode and Coding Ninjas, continuously honing my problem-solving skills.
+- 💼 I've solved over 350 problems on platforms like LeetCode and Coding Ninjas, continuously honing my problem-solving skills.
 - 🎓 Studying Information Science & Engineering at the National Institute of Engineering, Mysuru.
 - 📫 You can reach me via email at jatinbhatia319@gmail.com
 - 😄 Pronouns: He/Him
